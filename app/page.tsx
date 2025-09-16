@@ -15,6 +15,9 @@ export default function HomePage() {
 
     let isScrolling = false
     const handleWheel = (e: WheelEvent) => {
+      // Disable custom scroll on mobile devices
+      if (window.innerWidth < 768) return
+      
       if (isScrolling) return
 
       e.preventDefault()
@@ -43,12 +46,17 @@ export default function HomePage() {
 
     window.addEventListener("scroll", handleScroll)
     window.addEventListener("mousemove", handleMouseMove)
-    window.addEventListener("wheel", handleWheel, { passive: false })
+    // Only add wheel listener on desktop
+    if (window.innerWidth >= 768) {
+      window.addEventListener("wheel", handleWheel, { passive: false })
+    }
 
     return () => {
       window.removeEventListener("scroll", handleScroll)
       window.removeEventListener("mousemove", handleMouseMove)
-      window.removeEventListener("wheel", handleWheel)
+      if (window.innerWidth >= 768) {
+        window.removeEventListener("wheel", handleWheel)
+      }
     }
   }, [currentSection])
 
@@ -124,27 +132,24 @@ export default function HomePage() {
           <div className="absolute inset-0 bg-white/20" />
           <div className="absolute inset-0 bg-gradient-to-b from-white/10 via-transparent to-white/20" />
           <div className="absolute inset-0 bg-gradient-radial from-transparent via-white/5 to-white/15" />
-          {/* Luksusowe elementy dekoracyjne */}
-          <div className="absolute top-20 left-10 w-32 h-32 border border-amber-200/30 rounded-full animate-pulse"></div>
-          <div className="absolute bottom-20 right-10 w-24 h-24 border border-amber-300/40 rounded-full animate-pulse delay-1000"></div>
-          <div className="absolute top-1/2 left-5 w-16 h-16 border border-amber-200/20 rounded-full animate-pulse delay-500"></div>
         </div>
 
-        <nav className="relative z-10 flex items-center justify-between p-6">
-          <div className="flex items-center gap-3 px-6 py-3 bg-transparent ring-1 ring-yellow-400/40 backdrop-blur-xl rounded-full shadow-lg shadow-black/20 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-yellow-400/20 before:to-transparent before:translate-x-[-100%] hover:before:translate-x-[100%] before:transition-transform before:duration-1000">
+        <nav className="relative z-10 flex items-center justify-between p-4 md:p-6">
+          <div className="flex items-center gap-2 md:gap-3 px-4 md:px-6 py-2 md:py-3 bg-transparent ring-1 ring-yellow-400/40 backdrop-blur-xl rounded-full shadow-lg shadow-black/20 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-yellow-400/20 before:to-transparent before:translate-x-[-100%] hover:before:translate-x-[100%] before:transition-transform before:duration-1000">
             <div className="relative">
-              <Crown className="w-6 h-6 text-yellow-500" />
-              <Sparkles className="w-3 h-3 text-yellow-400 absolute -top-1 -right-1 animate-pulse" />
+              <Crown className="w-5 h-5 md:w-6 md:h-6 text-yellow-500" />
+              <Sparkles className="w-2 h-2 md:w-3 md:h-3 text-yellow-400 absolute -top-1 -right-1 animate-pulse" />
             </div>
             <div className="flex flex-col items-start">
-              <span className="font-bold text-2xl text-black tracking-wider" style={{ fontFamily: 'Inter, sans-serif' }}>LA PASSIONE</span>
-              <span className="font-light text-xs text-gray-600 tracking-widest uppercase">Salon Fryzjerski</span>
+              <span className="font-bold text-lg md:text-2xl text-black tracking-wider" style={{ fontFamily: 'Inter, sans-serif' }}>LA PASSIONE</span>
+              <span className="font-light text-xs text-gray-600 tracking-widest uppercase hidden sm:block">Salon Fryzjerski</span>
             </div>
           </div>
 
-          <div className="hidden md:flex items-center gap-1">
+          <div className="hidden lg:flex items-center gap-1">
             {[
               { name: "Strona Główna", id: "home" },
+              { name: "Portfolio", id: "portfolio" },
               { name: "Usługi", id: "services" },
               { name: "Opinie", id: "reviews" },
               { name: "Kontakt", id: "contact" },
@@ -152,19 +157,20 @@ export default function HomePage() {
               <button
                 key={item.name}
                 onClick={() => scrollToSection(item.id)}
-                className="px-4 py-2 bg-white/60 ring-1 ring-gray-300/40 backdrop-blur-xl rounded-full hover:bg-white/80 hover:ring-gray-400/50 transition-all duration-300 shadow-lg shadow-gray-900/10 hover:scale-105 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/50 before:to-transparent before:translate-x-[-100%] hover:before:translate-x-[100%] before:transition-transform before:duration-700 text-gray-800"
+                className="px-3 md:px-4 py-2 bg-transparent ring-1 ring-gray-300/40 backdrop-blur-xl rounded-full hover:bg-white/20 hover:ring-gray-400/50 transition-all duration-300 shadow-lg shadow-gray-900/10 hover:scale-105 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/50 before:to-transparent before:translate-x-[-100%] hover:before:translate-x-[100%] before:transition-transform before:duration-700 text-gray-800 text-sm md:text-base"
               >
                 {item.name}
               </button>
             ))}
           </div>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 md:gap-3">
             <Button
               onClick={() => scrollToSection("contact")}
-              className="relative overflow-hidden bg-gradient-to-r from-white via-gray-50 to-white text-gray-900 hover:from-gray-50 hover:via-white hover:to-gray-50 rounded-full px-6 font-semibold shadow-xl shadow-gray-900/20 ring-1 ring-yellow-400/30 transition-all duration-300 hover:scale-105 before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-yellow-400/20 before:to-transparent before:translate-x-[-100%] hover:before:translate-x-[100%] before:transition-transform before:duration-700 after:absolute after:inset-0 after:bg-gradient-to-r after:from-transparent after:via-white/60 after:to-transparent after:translate-x-[-100%] hover:after:translate-x-[100%] after:transition-transform after:duration-1000 after:delay-200"
+              className="relative overflow-hidden bg-transparent text-gray-900 hover:bg-white/20 rounded-full px-4 md:px-6 py-2 md:py-3 font-semibold shadow-xl shadow-gray-900/20 ring-1 ring-yellow-400/30 hover:ring-yellow-400/50 transition-all duration-300 hover:scale-105 text-sm md:text-base"
             >
-              Umów Wizytę
+              <span className="hidden sm:inline">Umów Wizytę</span>
+              <span className="sm:hidden">Umów</span>
             </Button>
           </div>
         </nav>
@@ -177,44 +183,44 @@ export default function HomePage() {
               opacity: Math.max(0, 1 - scrollY * 0.002),
             }}
           >
-            <div className="text-center mb-8">
+            <div className="text-center mb-6 md:mb-8">
               <div className="relative inline-block">
                 <h1
-                  className="text-7xl md:text-8xl lg:text-9xl font-bold tracking-wider mb-4 text-black drop-shadow-2xl text-center relative"
+                  className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold tracking-wider mb-4 text-black drop-shadow-2xl text-center relative"
                   style={{ 
                     fontFamily: 'Inter, sans-serif',
                     textShadow: "3px 3px 6px rgba(0,0,0,0.3), 0 0 30px rgba(255, 215, 0, 0.2)"
                   }}
                 >
                   LA PASSIONE
-                  <div className="absolute -top-4 -right-4">
-                    <Gem className="w-8 h-8 text-yellow-500 animate-pulse" />
+                  <div className="absolute -top-2 -right-2 md:-top-4 md:-right-4">
+                    <Gem className="w-6 h-6 md:w-8 md:h-8 text-yellow-500 animate-pulse" />
                   </div>
                 </h1>
-                <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-48 h-1 bg-gradient-to-r from-transparent via-yellow-500/80 to-transparent rounded-full"></div>
-                <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 text-gray-600 font-light text-lg tracking-widest">
+                <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-32 sm:w-40 md:w-48 h-1 bg-gradient-to-r from-transparent via-yellow-500/80 to-transparent rounded-full"></div>
+                <div className="absolute -bottom-1 md:-bottom-2 left-1/2 transform -translate-x-1/2 text-gray-600 font-light text-sm md:text-lg tracking-widest">
                   ✦ Salon Fryzjerski Premium ✦
                 </div>
               </div>
             </div>
 
             <p
-              className="text-2xl md:text-3xl text-black max-w-3xl mx-auto mb-16 leading-relaxed text-pretty font-light tracking-wide drop-shadow-sm text-center"
+              className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-black max-w-3xl mx-auto mb-12 md:mb-16 leading-relaxed text-pretty font-light tracking-wide drop-shadow-sm text-center px-4"
               style={{ 
                 fontFamily: 'Inter, sans-serif',
                 textShadow: "2px 2px 4px rgba(0,0,0,0.15)"
               }}
             >
-              Gdzie elegancja spotyka się z pasją<br/>
-              <span className="text-lg text-gray-600 italic">Tworzymy niepowtarzalne stylizacje z dbałością o każdy detal</span>
+              Gdzie elegancja spotyka się z pasją
             </p>
 
             <Button
               size="lg"
               onClick={() => scrollToSection("contact")}
-              className="relative overflow-hidden bg-gradient-to-r from-white via-gray-50 to-white text-gray-900 hover:from-gray-50 hover:via-white hover:to-gray-50 rounded-full px-12 py-6 text-xl font-semibold shadow-2xl shadow-gray-900/20 hover:shadow-gray-900/30 transition-all duration-300 transform hover:scale-105 ring-1 ring-yellow-400/40 hover:ring-yellow-400/60 before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-yellow-400/20 before:to-transparent before:translate-x-[-100%] hover:before:translate-x-[100%] before:transition-transform before:duration-700 after:absolute after:inset-0 after:bg-gradient-to-r after:from-transparent after:via-white/80 after:to-transparent after:translate-x-[-100%] hover:after:translate-x-[100%] after:transition-transform after:duration-1000 after:delay-300"
+              className="relative overflow-hidden bg-gradient-to-r from-white via-gray-50 to-white text-gray-900 hover:from-gray-50 hover:via-white hover:to-gray-50 rounded-full px-8 md:px-12 py-4 md:py-6 text-lg md:text-xl font-semibold shadow-2xl shadow-gray-900/20 hover:shadow-gray-900/30 transition-all duration-300 transform hover:scale-105 ring-1 ring-yellow-400/40 hover:ring-yellow-400/60 before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-yellow-400/20 before:to-transparent before:translate-x-[-100%] hover:before:translate-x-[100%] before:transition-transform before:duration-700 after:absolute after:inset-0 after:bg-gradient-to-r after:from-transparent after:via-white/80 after:to-transparent after:translate-x-[-100%] hover:after:translate-x-[100%] after:transition-transform after:duration-1000 after:delay-300"
             >
-              Umów Wizytę Online
+              <span className="hidden sm:inline">Umów Wizytę Online</span>
+              <span className="sm:hidden">Umów Wizytę</span>
             </Button>
           </div>
 
@@ -232,62 +238,106 @@ export default function HomePage() {
         </div>
       </div>
 
-      <section className="section-snap relative z-10 min-h-screen flex items-center py-24 px-6 bg-gradient-to-b from-gray-50 via-white to-gray-100">
+      {/* Portfolio Section */}
+      <section className="section-snap relative z-10 min-h-screen flex items-center py-12 md:py-24 px-4 md:px-6 bg-gradient-to-b from-gray-50 via-white to-gray-100">
         <div className="max-w-7xl mx-auto w-full">
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
-            <div className="rounded-2xl bg-white/80 ring-1 ring-gray-300/40 backdrop-blur-xl p-8 text-center shadow-xl shadow-gray-900/10 hover:ring-yellow-400/50 transition-all duration-300 cursor-pointer transform hover:scale-105 active:scale-95 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-br before:from-transparent before:via-white/60 before:to-transparent before:translate-x-[-100%] hover:before:translate-x-[100%] before:transition-transform before:duration-1000">
-              <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-gradient-to-br from-yellow-50 to-yellow-100 ring-2 ring-yellow-300/50 backdrop-blur-xl mb-6 shadow-xl shadow-black/20 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-yellow-300/30 before:to-transparent before:translate-x-[-100%] hover:before:translate-x-[100%] before:transition-transform before:duration-700">
-                <Crown className="w-7 h-7 text-yellow-600" />
-              </div>
-              <h3 className="text-xl font-bold mb-4 text-black" style={{ fontFamily: 'Inter, sans-serif' }}>Doświadczeni Styliści</h3>
-              <p className="text-gray-700 leading-relaxed font-light">Nasz zespół to pasjonaci z wieloletnim doświadczeniem w tworzeniu luksusowych stylizacji.</p>
-            </div>
+          <div className="text-center mb-12 md:mb-16">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 text-black" style={{ fontFamily: 'Inter, sans-serif' }}>
+              Portfolio
+            </h2>
+            <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto" style={{ fontFamily: 'Inter, sans-serif' }}>
+              Zobacz nasze najnowsze prace i inspiruj się luksusowymi stylizacjami
+            </p>
+          </div>
 
-            <div className="rounded-2xl bg-white/80 ring-1 ring-gray-300/40 backdrop-blur-xl p-8 text-center shadow-xl shadow-gray-900/10 hover:ring-yellow-400/50 transition-all duration-300 cursor-pointer transform hover:scale-105 active:scale-95 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-br before:from-transparent before:via-white/60 before:to-transparent before:translate-x-[-100%] hover:before:translate-x-[100%] before:transition-transform before:duration-1000">
-              <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-gradient-to-br from-yellow-50 to-yellow-100 ring-2 ring-yellow-300/50 backdrop-blur-xl mb-6 shadow-xl shadow-black/20 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-yellow-300/30 before:to-transparent before:translate-x-[-100%] hover:before:translate-x-[100%] before:transition-transform before:duration-700">
-                <Gem className="w-7 h-7 text-yellow-600" />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            {[
+              {
+                title: "Elegant Bob",
+                category: "Strzyżenie",
+                image: "/placeholder.jpg",
+                description: "Klasyczny bob z nowoczesnym akcentem"
+              },
+              {
+                title: "Balayage Blonde",
+                category: "Koloryzacja",
+                image: "/placeholder.jpg",
+                description: "Naturalne przejścia kolorów dla naturalnego wyglądu"
+              },
+              {
+                title: "Wedding Updo",
+                category: "Stylizacja",
+                image: "/placeholder.jpg",
+                description: "Eleganckie upięcie na specjalne okazje"
+              },
+              {
+                title: "Curly Revival",
+                category: "Pielęgnacja",
+                image: "/placeholder.jpg",
+                description: "Regeneracja i odżywienie naturalnych loków"
+              },
+              {
+                title: "Modern Pixie",
+                category: "Strzyżenie",
+                image: "/placeholder.jpg",
+                description: "Odważne, nowoczesne strzyżenie"
+              },
+              {
+                title: "Ombre Magic",
+                category: "Koloryzacja",
+                image: "/placeholder.jpg",
+                description: "Dramatyczne przejścia kolorów"
+              }
+            ].map((work, index) => (
+              <div key={index} className="group relative overflow-hidden rounded-2xl bg-white shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
+                <div className="aspect-square overflow-hidden">
+                  <img
+                    src={work.image}
+                    alt={work.title}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </div>
+                <div className="p-6">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-sm font-medium text-yellow-600 uppercase tracking-wider">{work.category}</span>
+                    <div className="w-8 h-8 bg-yellow-100 rounded-full flex items-center justify-center">
+                      <Sparkles className="w-4 h-4 text-yellow-600" />
+                    </div>
+                  </div>
+                  <h3 className="text-xl font-bold text-black mb-2" style={{ fontFamily: 'Inter, sans-serif' }}>{work.title}</h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">{work.description}</p>
+                </div>
               </div>
-              <h3 className="text-xl font-bold mb-4 text-black" style={{ fontFamily: 'Inter, sans-serif' }}>Najwyższa Jakość</h3>
-              <p className="text-gray-700 leading-relaxed font-light">Używamy wyłącznie luksusowych produktów premium od światowych marek.</p>
-            </div>
+            ))}
+          </div>
 
-            <div className="rounded-2xl bg-white/80 ring-1 ring-gray-300/40 backdrop-blur-xl p-8 text-center shadow-xl shadow-gray-900/10 hover:ring-yellow-400/50 transition-all duration-300 cursor-pointer transform hover:scale-105 active:scale-95 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-br before:from-transparent before:via-white/60 before:to-transparent before:translate-x-[-100%] hover:before:translate-x-[100%] before:transition-transform before:duration-1000">
-              <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-gradient-to-br from-yellow-50 to-yellow-100 ring-2 ring-yellow-300/50 backdrop-blur-xl mb-6 shadow-xl shadow-black/20 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-yellow-300/30 before:to-transparent before:translate-x-[-100%] hover:before:translate-x-[100%] before:transition-transform before:duration-700">
-                <Scissors className="w-7 h-7 text-yellow-600" />
-              </div>
-              <h3 className="text-xl font-bold mb-4 text-black" style={{ fontFamily: 'Inter, sans-serif' }}>Indywidualne Podejście</h3>
-              <p className="text-gray-700 leading-relaxed font-light">Każda stylizacja jest tworzona specjalnie dla Ciebie z dbałością o każdy detal.</p>
-            </div>
-
-            <div className="rounded-2xl bg-white/80 ring-1 ring-gray-300/40 backdrop-blur-xl p-8 text-center shadow-xl shadow-gray-900/10 hover:ring-yellow-400/50 transition-all duration-300 cursor-pointer transform hover:scale-105 active:scale-95 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-br before:from-transparent before:via-white/60 before:to-transparent before:translate-x-[-100%] hover:before:translate-x-[100%] before:transition-transform before:duration-1000">
-              <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-gradient-to-br from-yellow-50 to-yellow-100 ring-2 ring-yellow-300/50 backdrop-blur-xl mb-6 shadow-xl shadow-black/20 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-yellow-300/30 before:to-transparent before:translate-x-[-100%] hover:before:translate-x-[100%] before:transition-transform before:duration-700">
-                <Sparkles className="w-7 h-7 text-yellow-600" />
-              </div>
-              <h3 className="text-xl font-bold mb-4 text-black" style={{ fontFamily: 'Inter, sans-serif' }}>Luksusowe Doświadczenie</h3>
-              <p className="text-gray-700 leading-relaxed font-light">Elastyczne terminy i luksusowa atmosfera dopasowana do Twojego stylu życia.</p>
-            </div>
+          <div className="text-center mt-12">
+            <Button className="relative overflow-hidden bg-black text-white hover:bg-gray-800 rounded-full px-8 py-4 text-lg font-semibold shadow-xl transition-all duration-300 hover:scale-105 ring-2 ring-yellow-400/30 hover:ring-yellow-400/50">
+              Zobacz Więcej Prac
+            </Button>
           </div>
         </div>
       </section>
 
       <section
         id="services"
-        className="section-snap relative z-10 min-h-screen flex items-center py-24 px-6 bg-gradient-to-b from-gray-100 via-white to-gray-50"
+        className="section-snap relative z-10 min-h-screen flex items-center py-12 md:py-24 px-4 md:px-6 bg-gradient-to-b from-gray-100 via-white to-gray-50"
       >
         <div className="max-w-7xl mx-auto w-full">
-          <div className="rounded-3xl bg-white/90 ring-1 ring-gray-300/50 backdrop-blur-xl p-12 shadow-2xl shadow-gray-900/10 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-br before:from-transparent before:via-white/40 before:to-transparent before:translate-x-[-100%] hover:before:translate-x-[100%] before:transition-transform before:duration-2000">
-            <div className="text-center mb-16">
-              <div className="relative inline-block mb-8">
-                <h2 className="text-6xl md:text-7xl font-bold tracking-tight mb-6 text-balance text-black" style={{ fontFamily: 'Inter, sans-serif' }}>
+          <div className="rounded-2xl md:rounded-3xl bg-white/90 ring-1 ring-gray-300/50 backdrop-blur-xl p-6 md:p-12 shadow-2xl shadow-gray-900/10 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-br before:from-transparent before:via-white/40 before:to-transparent before:translate-x-[-100%] hover:before:translate-x-[100%] before:transition-transform before:duration-2000">
+            <div className="text-center mb-12 md:mb-16">
+              <div className="relative inline-block mb-6 md:mb-8">
+                <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-4 md:mb-6 text-balance text-black" style={{ fontFamily: 'Inter, sans-serif' }}>
                   Nasze Usługi
                 </h2>
-                <div className="absolute -top-2 -right-2">
-                  <Crown className="w-8 h-8 text-yellow-500 animate-pulse" />
+                <div className="absolute -top-1 -right-1 md:-top-2 md:-right-2">
+                  <Crown className="w-6 h-6 md:w-8 md:h-8 text-yellow-500 animate-pulse" />
                 </div>
               </div>
-              <p className="text-2xl text-gray-700 max-w-4xl mx-auto text-pretty font-light leading-relaxed" style={{ fontFamily: 'Inter, sans-serif' }}>
+              <p className="text-lg sm:text-xl md:text-2xl text-gray-700 max-w-4xl mx-auto text-pretty font-light leading-relaxed px-4" style={{ fontFamily: 'Inter, sans-serif' }}>
                 Od klasycznych strzyżeń po awangardowe koloryzacje<br/>
-                <span className="text-lg text-gray-600 italic">tworzymy luksusowy look idealny dla Ciebie</span>
+                <span className="text-base md:text-lg text-gray-600 italic">tworzymy luksusowy look idealny dla Ciebie</span>
               </p>
             </div>
 
