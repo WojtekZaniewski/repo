@@ -14,17 +14,28 @@ export default function HomePage() {
     const handleMouseMove = (e: MouseEvent) => setMouseY(e.clientY)
 
     let isScrolling = false
+    let scrollTimeout: NodeJS.Timeout
+    
     const handleWheel = (e: WheelEvent) => {
       // Disable custom scroll on mobile devices
       if (window.innerWidth < 768) return
       
       if (isScrolling) return
 
+      // Clear existing timeout
+      if (scrollTimeout) clearTimeout(scrollTimeout)
+      
       e.preventDefault()
       isScrolling = true
 
       const sections = document.querySelectorAll(".section-snap")
       const totalSections = sections.length
+      const scrollThreshold = 50 // Minimum scroll distance
+
+      if (Math.abs(e.deltaY) < scrollThreshold) {
+        isScrolling = false
+        return
+      }
 
       if (e.deltaY > 0 && currentSection < totalSections - 1) {
         // Scroll down
@@ -38,10 +49,10 @@ export default function HomePage() {
         sections[prevSection]?.scrollIntoView({ behavior: "smooth" })
       }
 
-      // Reset scrolling flag after animation
-      setTimeout(() => {
+      // Reset scrolling flag after animation with shorter timeout
+      scrollTimeout = setTimeout(() => {
         isScrolling = false
-      }, 1000)
+      }, 800)
     }
 
     window.addEventListener("scroll", handleScroll)
@@ -57,6 +68,7 @@ export default function HomePage() {
       if (window.innerWidth >= 768) {
         window.removeEventListener("wheel", handleWheel)
       }
+      if (scrollTimeout) clearTimeout(scrollTimeout)
     }
   }, [currentSection])
 
@@ -146,7 +158,7 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="hidden lg:flex items-center gap-1">
+          <div className="hidden lg:flex items-center gap-3 md:gap-4">
             {[
               { name: "Strona Główna", id: "home" },
               { name: "Portfolio", id: "portfolio" },
@@ -157,17 +169,17 @@ export default function HomePage() {
               <button
                 key={item.name}
                 onClick={() => scrollToSection(item.id)}
-                className="px-3 md:px-4 py-2 bg-transparent ring-1 ring-gray-300/40 backdrop-blur-xl rounded-full hover:bg-white/20 hover:ring-gray-400/50 transition-all duration-300 shadow-lg shadow-gray-900/10 hover:scale-105 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/50 before:to-transparent before:translate-x-[-100%] hover:before:translate-x-[100%] before:transition-transform before:duration-700 text-gray-800 text-sm md:text-base"
+                className="px-4 md:px-5 py-2 md:py-3 bg-transparent ring-1 ring-gray-300/40 backdrop-blur-xl rounded-full hover:bg-white/20 hover:ring-gray-400/50 transition-all duration-300 shadow-lg shadow-gray-900/10 hover:scale-105 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/50 before:to-transparent before:translate-x-[-100%] hover:before:translate-x-[100%] before:transition-transform before:duration-700 text-gray-800 text-sm md:text-base whitespace-nowrap"
               >
                 {item.name}
               </button>
             ))}
           </div>
 
-          <div className="flex items-center gap-2 md:gap-3">
+          <div className="flex items-center">
             <Button
               onClick={() => scrollToSection("contact")}
-              className="relative overflow-hidden bg-transparent text-gray-900 hover:bg-white/20 rounded-full px-4 md:px-6 py-2 md:py-3 font-semibold shadow-xl shadow-gray-900/20 ring-1 ring-yellow-400/30 hover:ring-yellow-400/50 transition-all duration-300 hover:scale-105 text-sm md:text-base"
+              className="relative overflow-hidden bg-transparent text-gray-900 hover:bg-white/20 rounded-full px-5 md:px-6 py-2 md:py-3 font-semibold shadow-xl shadow-gray-900/20 ring-1 ring-yellow-400/30 hover:ring-yellow-400/50 transition-all duration-300 hover:scale-105 text-sm md:text-base ml-2 md:ml-4"
             >
               <span className="hidden sm:inline">Umów Wizytę</span>
               <span className="sm:hidden">Umów</span>
@@ -198,7 +210,7 @@ export default function HomePage() {
                   </div>
                 </h1>
                 <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-32 sm:w-40 md:w-48 h-1 bg-gradient-to-r from-transparent via-yellow-500/80 to-transparent rounded-full"></div>
-                <div className="absolute -bottom-1 md:-bottom-2 left-1/2 transform -translate-x-1/2 text-gray-600 font-light text-sm md:text-lg tracking-widest">
+                <div className="absolute -bottom-1 md:-bottom-2 left-1/2 transform -translate-x-1/2 text-white font-light text-sm md:text-lg tracking-widest drop-shadow-lg" style={{ textShadow: "2px 2px 4px rgba(0,0,0,0.8)" }}>
                   ✦ Salon Fryzjerski Premium ✦
                 </div>
               </div>
