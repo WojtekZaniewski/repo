@@ -98,15 +98,29 @@ export default function HomePage() {
         id="home"
         className="section-snap hero-section relative min-h-screen overflow-hidden bg-gradient-to-br from-gray-100 via-white to-gray-50"
       >
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-1000 ease-out"
-          style={{
-            backgroundImage:
-              "url(/placeholder.svg?height=1080&width=1920&query=luxury+modern+hair+salon+interior+with+elegant+styling+chairs+mirrors+and+professional+lighting+bright+white+cinematic)",
-            transform: `scale(${1 + scrollY * 0.0003}) translateY(${scrollY * 0.2 + mouseY * 0.01}px)`,
-            filter: "grayscale(20%) contrast(1.1) brightness(0.8)",
-          }}
-        >
+        <div className="absolute inset-0 overflow-hidden">
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 ease-out"
+            style={{
+              transform: `scale(${1 + scrollY * 0.0003}) translateY(${scrollY * 0.2 + mouseY * 0.01}px)`,
+              filter: "grayscale(20%) contrast(1.1) brightness(0.8)",
+            }}
+          >
+            <source src="/bg.mov" type="video/mp4" />
+            <source src="/bg.webm" type="video/webm" />
+            {/* Fallback image if video doesn't load */}
+            <div
+              className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+              style={{
+                backgroundImage:
+                  "url(/placeholder.svg?height=1080&width=1920&query=luxury+modern+hair+salon+interior+with+elegant+styling+chairs+mirrors+and+professional+lighting+bright+white+cinematic)",
+              }}
+            />
+          </video>
           <div className="absolute inset-0 bg-white/60" />
           <div className="absolute inset-0 bg-gradient-to-b from-white/40 via-gray-50/30 to-white/70" />
           <div className="absolute inset-0 bg-gradient-radial from-transparent via-white/20 to-gray-100/60" />
