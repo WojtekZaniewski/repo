@@ -1,6 +1,6 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Inter, Montserrat } from "next/font/google"
+import { Inter, Montserrat, Chivo } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { Suspense } from "react"
 import "./globals.css"
@@ -14,6 +14,12 @@ const inter = Inter({
 const montserrat = Montserrat({
   subsets: ["latin"],
   variable: "--font-sans",
+  display: "swap",
+})
+
+const chivo = Chivo({
+  subsets: ["latin"],
+  variable: "--font-chivo",
   display: "swap",
 })
 
@@ -31,7 +37,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`font-sans ${inter.variable} ${montserrat.variable}`}>
+      <body className={`font-sans ${inter.variable} ${montserrat.variable} ${chivo.variable}`}>
         <Suspense fallback={null}>{children}</Suspense>
         <Analytics />
       </body>
