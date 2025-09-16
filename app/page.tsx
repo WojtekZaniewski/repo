@@ -162,7 +162,7 @@ export default function HomePage() {
               <Sparkles className="w-1.5 h-1.5 sm:w-2 sm:h-2 md:w-3 md:h-3 text-yellow-400 absolute -top-0.5 -right-0.5 sm:-top-1 sm:-right-1 animate-pulse" />
             </div>
             <div className="flex flex-col items-start">
-              <span className="font-bold text-sm sm:text-base md:text-2xl text-black tracking-wider" style={{ fontFamily: 'var(--font-playfair)' }}>LA PASSIONE</span>
+              <span className="font-bold text-sm sm:text-base md:text-2xl text-black tracking-wider" style={{ fontFamily: 'var(--font-montserrat)' }}>LA PASSIONE</span>
               <span className="font-light text-xs text-gray-600 tracking-widest uppercase hidden sm:block">Salon Fryzjerski</span>
             </div>
           </div>
@@ -208,7 +208,7 @@ export default function HomePage() {
                 <h1
                   className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-wider mb-3 sm:mb-4 text-black drop-shadow-2xl text-center relative"
                   style={{ 
-                    fontFamily: 'var(--font-playfair)',
+                    fontFamily: 'var(--font-montserrat)',
                     textShadow: "2px 2px 4px rgba(0,0,0,0.3), 0 0 20px rgba(255, 215, 0, 0.2)"
                   }}
                 >
@@ -248,7 +248,7 @@ export default function HomePage() {
       <section className="section-snap scrollable-section relative z-10 min-h-screen flex items-center py-8 sm:py-12 md:py-24 px-3 sm:px-4 md:px-6 bg-gradient-to-b from-gray-50 via-white to-gray-100">
         <div className="max-w-7xl mx-auto w-full">
           <div className="text-center mb-8 sm:mb-12 md:mb-16">
-             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4 sm:mb-6 text-black" style={{ fontFamily: 'var(--font-playfair)' }}>
+             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4 sm:mb-6 text-black" style={{ fontFamily: 'var(--font-montserrat)' }}>
                Portfolio
              </h2>
              <p className="text-base sm:text-lg md:text-xl text-gray-700 max-w-2xl sm:max-w-3xl mx-auto px-4" style={{ fontFamily: 'var(--font-source-sans)' }}>
@@ -311,7 +311,7 @@ export default function HomePage() {
                        <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 text-yellow-600" />
                      </div>
                    </div>
-                   <h3 className="text-lg sm:text-xl font-bold text-black mb-2" style={{ fontFamily: 'var(--font-playfair)' }}>{work.title}</h3>
+                   <h3 className="text-lg sm:text-xl font-bold text-black mb-2" style={{ fontFamily: 'var(--font-montserrat)' }}>{work.title}</h3>
                    <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">{work.description}</p>
                  </div>
                </div>
@@ -334,7 +334,7 @@ export default function HomePage() {
           <div className="rounded-xl sm:rounded-2xl md:rounded-3xl bg-white/90 ring-1 ring-gray-300/50 backdrop-blur-xl p-4 sm:p-6 md:p-12 shadow-2xl shadow-gray-900/10 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-br before:from-transparent before:via-white/40 before:to-transparent before:translate-x-[-100%] hover:before:translate-x-[100%] before:transition-transform before:duration-2000">
             <div className="text-center mb-8 sm:mb-12 md:mb-16">
               <div className="relative inline-block mb-4 sm:mb-6 md:mb-8">
-                 <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight mb-3 sm:mb-4 md:mb-6 text-balance text-black" style={{ fontFamily: 'var(--font-playfair)' }}>
+                 <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight mb-3 sm:mb-4 md:mb-6 text-balance text-black" style={{ fontFamily: 'var(--font-montserrat)' }}>
                    Nasze Usługi
                  </h2>
                  <div className="absolute -top-0.5 -right-0.5 sm:-top-1 sm:-right-1 md:-top-2 md:-right-2">
@@ -376,7 +376,7 @@ export default function HomePage() {
                  >
                    <div className="flex-1">
                      <div className="text-2xl sm:text-3xl font-bold text-yellow-500 mb-3 sm:mb-4" style={{ fontFamily: 'var(--font-source-sans)' }}>{service.num}</div>
-                     <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 text-gray-900" style={{ fontFamily: 'var(--font-playfair)' }}>{service.title}</h3>
+                     <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 text-gray-900" style={{ fontFamily: 'var(--font-montserrat)' }}>{service.title}</h3>
                      <p className="text-gray-700 leading-relaxed text-xs sm:text-sm">{service.desc}</p>
                    </div>
                  </div>
@@ -399,7 +399,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto w-full">
           <div className="rounded-2xl sm:rounded-3xl bg-white/90 ring-1 ring-gray-300/50 backdrop-blur p-6 sm:p-8 md:p-12 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-br before:from-transparent before:via-white/40 before:to-transparent before:translate-x-[-100%] hover:before:translate-x-[100%] before:transition-transform before:duration-2000">
             <div className="text-center mb-8 sm:mb-12 md:mb-16">
-               <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4 sm:mb-6 text-balance text-black" style={{ fontFamily: 'var(--font-playfair)' }}>
+               <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4 sm:mb-6 text-balance text-black" style={{ fontFamily: 'var(--font-montserrat)' }}>
                  Opinie Klientek
                </h2>
                <p className="text-base sm:text-lg md:text-xl text-gray-700 max-w-2xl sm:max-w-3xl mx-auto text-pretty px-4" style={{ fontFamily: 'var(--font-source-sans)' }}>
@@ -462,7 +462,7 @@ export default function HomePage() {
           <div className="rounded-3xl bg-white/90 ring-1 ring-gray-300/50 backdrop-blur p-12 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-br before:from-transparent before:via-white/40 before:to-transparent before:translate-x-[-100%] hover:before:translate-x-[100%] before:transition-transform before:duration-2000">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
               <div>
-                 <h2 className="text-5xl md:text-6xl font-bold tracking-tight mb-6 text-balance text-black" style={{ fontFamily: 'var(--font-playfair)' }}>
+                 <h2 className="text-5xl md:text-6xl font-bold tracking-tight mb-6 text-balance text-black" style={{ fontFamily: 'var(--font-montserrat)' }}>
                    Często Zadawane Pytania
                  </h2>
                 <p className="text-xl text-gray-700 leading-relaxed text-pretty" style={{ fontFamily: 'var(--font-source-sans)' }}>
@@ -481,7 +481,7 @@ export default function HomePage() {
                       onClick={() => toggleFaq(index)}
                       className="w-full p-6 text-left flex items-center justify-between hover:bg-white/70 transition-colors"
                     >
-                       <h3 className="text-lg font-semibold pr-4 text-gray-900" style={{ fontFamily: 'var(--font-playfair)' }}>{faq.question}</h3>
+                       <h3 className="text-lg font-semibold pr-4 text-gray-900" style={{ fontFamily: 'var(--font-montserrat)' }}>{faq.question}</h3>
                       {openFaq === index ? (
                         <Minus className="w-5 h-5 flex-shrink-0 text-yellow-500" />
                       ) : (
@@ -505,7 +505,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto w-full">
           <div className="rounded-3xl bg-white/90 ring-1 ring-gray-300/50 backdrop-blur p-12 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-br before:from-transparent before:via-white/40 before:to-transparent before:translate-x-[-100%] hover:before:translate-x-[100%] before:transition-transform before:duration-2000">
             <div className="text-center mb-16">
-               <h2 className="text-5xl md:text-6xl font-bold tracking-tight mb-6 text-balance text-black" style={{ fontFamily: 'var(--font-playfair)' }}>
+               <h2 className="text-5xl md:text-6xl font-bold tracking-tight mb-6 text-balance text-black" style={{ fontFamily: 'var(--font-montserrat)' }}>
                  Umów Wizytę
                </h2>
               <p className="text-xl text-gray-700 max-w-3xl mx-auto text-pretty" style={{ fontFamily: 'var(--font-source-sans)' }}>
@@ -515,7 +515,7 @@ export default function HomePage() {
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
               <div className="rounded-2xl bg-gradient-to-br from-white/95 to-gray-100/95 text-gray-900 p-8 shadow-2xl shadow-gray-900/10 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-br before:from-transparent before:via-white/60 before:to-transparent before:translate-x-[-100%] hover:before:translate-x-[100%] before:transition-transform before:duration-1000">
-                 <h3 className="text-2xl font-bold mb-6" style={{ fontFamily: 'var(--font-playfair)' }}>Rezerwacja Online</h3>
+                 <h3 className="text-2xl font-bold mb-6" style={{ fontFamily: 'var(--font-montserrat)' }}>Rezerwacja Online</h3>
                 <form className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
@@ -640,7 +640,7 @@ export default function HomePage() {
                           <contact.icon className="w-6 h-6 text-white" />
                         </div>
                         <div>
-                           <h4 className="text-lg font-semibold" style={{ fontFamily: 'var(--font-playfair)' }}>{contact.title}</h4>
+                           <h4 className="text-lg font-semibold" style={{ fontFamily: 'var(--font-montserrat)' }}>{contact.title}</h4>
                           <p className="text-gray-700">{contact.info}</p>
                         </div>
                       </div>
