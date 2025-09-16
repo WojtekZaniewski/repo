@@ -155,14 +155,14 @@ export default function HomePage() {
           <div className="absolute inset-0 bg-gradient-radial from-transparent via-white/5 to-white/15" />
         </div>
 
-        <nav className="relative z-10 flex items-center justify-between p-4 md:p-6">
-          <div className="flex items-center gap-2 md:gap-3 px-4 md:px-6 py-2 md:py-3 bg-transparent ring-1 ring-yellow-400/40 backdrop-blur-xl rounded-full shadow-lg shadow-black/20 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-yellow-400/20 before:to-transparent before:translate-x-[-100%] hover:before:translate-x-[100%] before:transition-transform before:duration-1000">
+        <nav className="relative z-10 flex items-center justify-between p-2 sm:p-3 md:p-6">
+          <div className="flex items-center gap-1 sm:gap-2 md:gap-3 px-2 sm:px-4 md:px-6 py-1.5 sm:py-2 md:py-3 bg-transparent ring-1 ring-yellow-400/40 backdrop-blur-xl rounded-full shadow-lg shadow-black/20 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-yellow-400/20 before:to-transparent before:translate-x-[-100%] hover:before:translate-x-[100%] before:transition-transform before:duration-1000">
             <div className="relative">
-              <Crown className="w-5 h-5 md:w-6 md:h-6 text-yellow-500" />
-              <Sparkles className="w-2 h-2 md:w-3 md:h-3 text-yellow-400 absolute -top-1 -right-1 animate-pulse" />
+              <Crown className="w-3 h-3 sm:w-4 sm:h-4 md:w-6 md:h-6 text-yellow-500" />
+              <Sparkles className="w-1.5 h-1.5 sm:w-2 sm:h-2 md:w-3 md:h-3 text-yellow-400 absolute -top-0.5 -right-0.5 sm:-top-1 sm:-right-1 animate-pulse" />
             </div>
             <div className="flex flex-col items-start">
-              <span className="font-bold text-lg md:text-2xl text-black tracking-wider" style={{ fontFamily: 'var(--font-source-sans)' }}>LA PASSIONE</span>
+              <span className="font-bold text-sm sm:text-base md:text-2xl text-black tracking-wider" style={{ fontFamily: 'var(--font-playfair)' }}>LA PASSIONE</span>
               <span className="font-light text-xs text-gray-600 tracking-widest uppercase hidden sm:block">Salon Fryzjerski</span>
             </div>
           </div>
@@ -188,15 +188,14 @@ export default function HomePage() {
           <div className="flex items-center">
             <Button
               onClick={() => scrollToSection("contact")}
-              className="relative overflow-hidden bg-transparent text-gray-900 hover:bg-white/20 rounded-full px-5 md:px-6 py-2 md:py-3 font-semibold shadow-xl shadow-gray-900/20 ring-1 ring-yellow-400/30 hover:ring-yellow-400/50 transition-all duration-300 hover:scale-105 text-sm md:text-base ml-2 md:ml-4"
+              className="relative overflow-hidden bg-transparent text-gray-900 hover:bg-white/20 rounded-full px-3 sm:px-4 md:px-6 py-1.5 sm:py-2 md:py-3 font-semibold shadow-xl shadow-gray-900/20 ring-1 ring-yellow-400/30 hover:ring-yellow-400/50 transition-all duration-300 hover:scale-105 text-xs sm:text-sm md:text-base"
             >
-              <span className="hidden sm:inline">Umów Wizytę</span>
-              <span className="sm:hidden">Umów</span>
+              <span className="text-xs sm:text-sm md:text-base">Umów Wizytę</span>
             </Button>
           </div>
         </nav>
 
-        <div className="relative z-10 flex flex-col items-center justify-center min-h-[calc(100vh-120px)] px-6 text-center bg-white/10">
+        <div className="relative z-10 flex flex-col items-center justify-center min-h-[calc(100vh-80px)] sm:min-h-[calc(100vh-100px)] md:min-h-[calc(100vh-120px)] px-4 sm:px-6 text-center bg-white/10">
           <div
             className="transform transition-all duration-1000 ease-out"
             style={{
@@ -207,26 +206,26 @@ export default function HomePage() {
             <div className="text-center mb-6 md:mb-8">
               <div className="relative inline-block">
                 <h1
-                  className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold tracking-wider mb-4 text-black drop-shadow-2xl text-center relative"
+                  className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-wider mb-3 sm:mb-4 text-black drop-shadow-2xl text-center relative"
                   style={{ 
-                    fontFamily: 'var(--font-source-sans)',
-                    textShadow: "3px 3px 6px rgba(0,0,0,0.3), 0 0 30px rgba(255, 215, 0, 0.2)"
+                    fontFamily: 'var(--font-playfair)',
+                    textShadow: "2px 2px 4px rgba(0,0,0,0.3), 0 0 20px rgba(255, 215, 0, 0.2)"
                   }}
                 >
                   LA PASSIONE
-                  <div className="absolute -top-2 -right-2 md:-top-4 md:-right-4">
-                    <Gem className="w-6 h-6 md:w-8 md:h-8 text-yellow-500 animate-pulse" />
+                  <div className="absolute -top-1 -right-1 sm:-top-2 sm:-right-2 md:-top-4 md:-right-4">
+                    <Gem className="w-4 h-4 sm:w-5 sm:h-5 md:w-8 md:h-8 text-yellow-500 animate-pulse" />
                   </div>
                 </h1>
                 <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-32 sm:w-40 md:w-48 h-1 bg-gradient-to-r from-transparent via-yellow-500/80 to-transparent rounded-full"></div>
-                <div className="absolute -bottom-1 md:-bottom-2 left-1/2 transform -translate-x-1/2 text-white font-light text-sm md:text-lg tracking-widest drop-shadow-lg" style={{ textShadow: "2px 2px 4px rgba(0,0,0,0.8)" }}>
+                <div className="absolute -bottom-0.5 sm:-bottom-1 md:-bottom-2 left-1/2 transform -translate-x-1/2 text-white font-light text-xs sm:text-sm md:text-lg tracking-widest drop-shadow-lg" style={{ textShadow: "2px 2px 4px rgba(0,0,0,0.8)" }}>
                   ✦ Salon Fryzjerski Premium ✦
                 </div>
               </div>
             </div>
 
             <p
-              className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-black max-w-3xl mx-auto mb-12 md:mb-16 leading-relaxed text-pretty font-light tracking-wide drop-shadow-sm text-center px-4"
+              className="text-base sm:text-lg md:text-xl lg:text-2xl text-black max-w-2xl sm:max-w-3xl mx-auto mb-8 sm:mb-12 md:mb-16 leading-relaxed text-pretty font-light tracking-wide drop-shadow-sm text-center px-4"
               style={{ 
                 fontFamily: 'var(--font-source-sans)',
                 textShadow: "2px 2px 4px rgba(0,0,0,0.15)"
@@ -238,10 +237,9 @@ export default function HomePage() {
             <Button
               size="lg"
               onClick={() => scrollToSection("contact")}
-              className="relative overflow-hidden bg-gradient-to-r from-white via-gray-50 to-white text-gray-900 hover:from-gray-50 hover:via-white hover:to-gray-50 rounded-full px-8 md:px-12 py-4 md:py-6 text-lg md:text-xl font-semibold shadow-2xl shadow-gray-900/20 hover:shadow-gray-900/30 transition-all duration-300 transform hover:scale-105 ring-1 ring-yellow-400/40 hover:ring-yellow-400/60 before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-yellow-400/20 before:to-transparent before:translate-x-[-100%] hover:before:translate-x-[100%] before:transition-transform before:duration-700 after:absolute after:inset-0 after:bg-gradient-to-r after:from-transparent after:via-white/80 after:to-transparent after:translate-x-[-100%] hover:after:translate-x-[100%] after:transition-transform after:duration-1000 after:delay-300"
+              className="relative overflow-hidden bg-gradient-to-r from-white via-gray-50 to-white text-gray-900 hover:from-gray-50 hover:via-white hover:to-gray-50 rounded-full px-6 sm:px-8 md:px-12 py-3 sm:py-4 md:py-6 text-base sm:text-lg md:text-xl font-semibold shadow-2xl shadow-gray-900/20 hover:shadow-gray-900/30 transition-all duration-300 transform hover:scale-105 ring-1 ring-yellow-400/40 hover:ring-yellow-400/60 before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-yellow-400/20 before:to-transparent before:translate-x-[-100%] hover:before:translate-x-[100%] before:transition-transform before:duration-700 after:absolute after:inset-0 after:bg-gradient-to-r after:from-transparent after:via-white/80 after:to-transparent after:translate-x-[-100%] hover:after:translate-x-[100%] after:transition-transform after:duration-1000 after:delay-300"
             >
-              <span className="hidden sm:inline">Umów Wizytę Online</span>
-              <span className="sm:hidden">Umów Wizytę</span>
+              <span className="text-sm sm:text-base md:text-lg">Umów Wizytę Online</span>
             </Button>
           </div>
 
@@ -260,18 +258,18 @@ export default function HomePage() {
       </div>
 
       {/* Portfolio Section */}
-      <section className="section-snap scrollable-section relative z-10 min-h-screen flex items-center py-12 md:py-24 px-4 md:px-6 bg-gradient-to-b from-gray-50 via-white to-gray-100">
+      <section className="section-snap scrollable-section relative z-10 min-h-screen flex items-center py-8 sm:py-12 md:py-24 px-3 sm:px-4 md:px-6 bg-gradient-to-b from-gray-50 via-white to-gray-100">
         <div className="max-w-7xl mx-auto w-full">
-          <div className="text-center mb-12 md:mb-16">
-             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 text-black" style={{ fontFamily: 'var(--font-playfair)' }}>
+          <div className="text-center mb-8 sm:mb-12 md:mb-16">
+             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4 sm:mb-6 text-black" style={{ fontFamily: 'var(--font-playfair)' }}>
                Portfolio
              </h2>
-            <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto" style={{ fontFamily: 'var(--font-source-sans)' }}>
-              Zobacz nasze najnowsze prace i inspiruj się luksusowymi stylizacjami
-            </p>
-          </div>
+             <p className="text-base sm:text-lg md:text-xl text-gray-700 max-w-2xl sm:max-w-3xl mx-auto px-4" style={{ fontFamily: 'var(--font-source-sans)' }}>
+               Zobacz nasze najnowsze prace i inspiruj się luksusowymi stylizacjami
+             </p>
+           </div>
 
-           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-h-[80vh] overflow-y-auto scrollbar-hide">
+           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 max-h-[70vh] sm:max-h-[80vh] overflow-y-auto scrollbar-hide">
             {[
               {
                 title: "Elegant Bob",
@@ -310,31 +308,31 @@ export default function HomePage() {
                 description: "Dramatyczne przejścia kolorów"
               }
             ].map((work, index) => (
-              <div key={index} className="group relative overflow-hidden rounded-2xl bg-white shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
-                <div className="aspect-square overflow-hidden">
-                  <img
-                    src={work.image}
-                    alt={work.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                </div>
-                <div className="p-6">
-                  <div className="flex items-center justify-between mb-2">
-                    <span className="text-sm font-medium text-yellow-600 uppercase tracking-wider">{work.category}</span>
-                    <div className="w-8 h-8 bg-yellow-100 rounded-full flex items-center justify-center">
-                      <Sparkles className="w-4 h-4 text-yellow-600" />
-                    </div>
-                  </div>
-                   <h3 className="text-xl font-bold text-black mb-2" style={{ fontFamily: 'var(--font-playfair)' }}>{work.title}</h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">{work.description}</p>
-                </div>
-              </div>
+               <div key={index} className="group relative overflow-hidden rounded-xl sm:rounded-2xl bg-white shadow-lg sm:shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
+                 <div className="aspect-square overflow-hidden">
+                   <img
+                     src={work.image}
+                     alt={work.title}
+                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                   />
+                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                 </div>
+                 <div className="p-4 sm:p-6">
+                   <div className="flex items-center justify-between mb-2">
+                     <span className="text-xs sm:text-sm font-medium text-yellow-600 uppercase tracking-wider">{work.category}</span>
+                     <div className="w-6 h-6 sm:w-8 sm:h-8 bg-yellow-100 rounded-full flex items-center justify-center">
+                       <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 text-yellow-600" />
+                     </div>
+                   </div>
+                   <h3 className="text-lg sm:text-xl font-bold text-black mb-2" style={{ fontFamily: 'var(--font-playfair)' }}>{work.title}</h3>
+                   <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">{work.description}</p>
+                 </div>
+               </div>
             ))}
           </div>
 
-          <div className="text-center mt-12">
-            <Button className="relative overflow-hidden bg-black text-white hover:bg-gray-800 rounded-full px-8 py-4 text-lg font-semibold shadow-xl transition-all duration-300 hover:scale-105 ring-2 ring-yellow-400/30 hover:ring-yellow-400/50">
+          <div className="text-center mt-8 sm:mt-12">
+            <Button className="relative overflow-hidden bg-black text-white hover:bg-gray-800 rounded-full px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base md:text-lg font-semibold shadow-xl transition-all duration-300 hover:scale-105 ring-2 ring-yellow-400/30 hover:ring-yellow-400/50">
               Zobacz Więcej Prac
             </Button>
           </div>
@@ -343,26 +341,26 @@ export default function HomePage() {
 
       <section
         id="services"
-        className="section-snap relative z-10 min-h-screen flex items-center py-12 md:py-24 px-4 md:px-6 bg-gradient-to-b from-gray-100 via-white to-gray-50"
+        className="section-snap relative z-10 min-h-screen flex items-center py-8 sm:py-12 md:py-24 px-3 sm:px-4 md:px-6 bg-gradient-to-b from-gray-100 via-white to-gray-50"
       >
         <div className="max-w-7xl mx-auto w-full">
-          <div className="rounded-2xl md:rounded-3xl bg-white/90 ring-1 ring-gray-300/50 backdrop-blur-xl p-6 md:p-12 shadow-2xl shadow-gray-900/10 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-br before:from-transparent before:via-white/40 before:to-transparent before:translate-x-[-100%] hover:before:translate-x-[100%] before:transition-transform before:duration-2000">
-            <div className="text-center mb-12 md:mb-16">
-              <div className="relative inline-block mb-6 md:mb-8">
-                 <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-4 md:mb-6 text-balance text-black" style={{ fontFamily: 'var(--font-playfair)' }}>
+          <div className="rounded-xl sm:rounded-2xl md:rounded-3xl bg-white/90 ring-1 ring-gray-300/50 backdrop-blur-xl p-4 sm:p-6 md:p-12 shadow-2xl shadow-gray-900/10 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-br before:from-transparent before:via-white/40 before:to-transparent before:translate-x-[-100%] hover:before:translate-x-[100%] before:transition-transform before:duration-2000">
+            <div className="text-center mb-8 sm:mb-12 md:mb-16">
+              <div className="relative inline-block mb-4 sm:mb-6 md:mb-8">
+                 <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight mb-3 sm:mb-4 md:mb-6 text-balance text-black" style={{ fontFamily: 'var(--font-playfair)' }}>
                    Nasze Usługi
                  </h2>
-                <div className="absolute -top-1 -right-1 md:-top-2 md:-right-2">
-                  <Crown className="w-6 h-6 md:w-8 md:h-8 text-yellow-500 animate-pulse" />
-                </div>
-              </div>
-              <p className="text-lg sm:text-xl md:text-2xl text-gray-700 max-w-4xl mx-auto text-pretty font-light leading-relaxed px-4" style={{ fontFamily: 'var(--font-source-sans)' }}>
-                Od klasycznych strzyżeń po awangardowe koloryzacje<br/>
-                <span className="text-base md:text-lg text-gray-600 italic">tworzymy luksusowy look idealny dla Ciebie</span>
-              </p>
-            </div>
+                 <div className="absolute -top-0.5 -right-0.5 sm:-top-1 sm:-right-1 md:-top-2 md:-right-2">
+                   <Crown className="w-4 h-4 sm:w-5 sm:h-5 md:w-8 md:h-8 text-yellow-500 animate-pulse" />
+                 </div>
+               </div>
+               <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-700 max-w-3xl sm:max-w-4xl mx-auto text-pretty font-light leading-relaxed px-4" style={{ fontFamily: 'var(--font-source-sans)' }}>
+                 Od klasycznych strzyżeń po awangardowe koloryzacje<br/>
+                 <span className="text-sm sm:text-base md:text-lg text-gray-600 italic">tworzymy luksusowy look idealny dla Ciebie</span>
+               </p>
+             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8 mb-8 sm:mb-12">
               {[
                 {
                   num: "01.",
@@ -385,23 +383,23 @@ export default function HomePage() {
                   desc: "Regenerujące zabiegi, masaże głowy i profesjonalne kuracje przywracające włosom zdrowie i blask.",
                 },
               ].map((service) => (
-                <div
-                  key={service.num}
-                  className="rounded-2xl bg-white/80 ring-1 ring-gray-300/50 backdrop-blur-xl p-8 h-80 flex flex-col hover:ring-yellow-400/50 transition-all duration-300 shadow-xl shadow-gray-900/10 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-br before:from-transparent before:via-white/60 before:to-transparent before:translate-x-[-100%] hover:before:translate-x-[100%] before:transition-transform before:duration-1000"
-                >
-                  <div className="flex-1">
-                    <div className="text-3xl font-bold text-yellow-500 mb-4" style={{ fontFamily: 'var(--font-source-sans)' }}>{service.num}</div>
-                     <h3 className="text-xl font-semibold mb-4 text-gray-900" style={{ fontFamily: 'var(--font-playfair)' }}>{service.title}</h3>
-                    <p className="text-gray-700 leading-relaxed text-sm">{service.desc}</p>
-                  </div>
-                </div>
+                 <div
+                   key={service.num}
+                   className="rounded-xl sm:rounded-2xl bg-white/80 ring-1 ring-gray-300/50 backdrop-blur-xl p-4 sm:p-6 md:p-8 h-64 sm:h-72 md:h-80 flex flex-col hover:ring-yellow-400/50 transition-all duration-300 shadow-lg sm:shadow-xl shadow-gray-900/10 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-br before:from-transparent before:via-white/60 before:to-transparent before:translate-x-[-100%] hover:before:translate-x-[100%] before:transition-transform before:duration-1000"
+                 >
+                   <div className="flex-1">
+                     <div className="text-2xl sm:text-3xl font-bold text-yellow-500 mb-3 sm:mb-4" style={{ fontFamily: 'var(--font-source-sans)' }}>{service.num}</div>
+                     <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 text-gray-900" style={{ fontFamily: 'var(--font-playfair)' }}>{service.title}</h3>
+                     <p className="text-gray-700 leading-relaxed text-xs sm:text-sm">{service.desc}</p>
+                   </div>
+                 </div>
               ))}
             </div>
 
             <div className="text-center">
               <Button
                 size="lg"
-                className="relative overflow-hidden bg-gradient-to-r from-white via-gray-50 to-white text-gray-900 hover:from-gray-50 hover:via-white hover:to-gray-50 rounded-full px-12 py-4 text-lg font-semibold shadow-xl shadow-gray-900/20 ring-1 ring-yellow-400/30 hover:ring-yellow-400/50 transition-all duration-300 hover:scale-105 before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-yellow-400/20 before:to-transparent before:translate-x-[-100%] hover:before:translate-x-[100%] before:transition-transform before:duration-700 after:absolute after:inset-0 after:bg-gradient-to-r after:from-transparent after:via-white/80 after:to-transparent after:translate-x-[-100%] hover:after:translate-x-[100%] after:transition-transform after:duration-1000 after:delay-200"
+                className="relative overflow-hidden bg-gradient-to-r from-white via-gray-50 to-white text-gray-900 hover:from-gray-50 hover:via-white hover:to-gray-50 rounded-full px-6 sm:px-8 md:px-12 py-3 sm:py-4 text-sm sm:text-base md:text-lg font-semibold shadow-xl shadow-gray-900/20 ring-1 ring-yellow-400/30 hover:ring-yellow-400/50 transition-all duration-300 hover:scale-105 before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-yellow-400/20 before:to-transparent before:translate-x-[-100%] hover:before:translate-x-[100%] before:transition-transform before:duration-700 after:absolute after:inset-0 after:bg-gradient-to-r after:from-transparent after:via-white/80 after:to-transparent after:translate-x-[-100%] hover:after:translate-x-[100%] after:transition-transform after:duration-1000 after:delay-200"
               >
                 Zobacz Pełną Ofertę
               </Button>
@@ -410,19 +408,19 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="reviews" className="section-snap relative z-10 min-h-screen flex items-center py-24 px-6">
+      <section id="reviews" className="section-snap relative z-10 min-h-screen flex items-center py-8 sm:py-12 md:py-24 px-3 sm:px-4 md:px-6">
         <div className="max-w-7xl mx-auto w-full">
-          <div className="rounded-3xl bg-white/90 ring-1 ring-gray-300/50 backdrop-blur p-12 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-br before:from-transparent before:via-white/40 before:to-transparent before:translate-x-[-100%] hover:before:translate-x-[100%] before:transition-transform before:duration-2000">
-            <div className="text-center mb-16">
-               <h2 className="text-5xl md:text-6xl font-bold tracking-tight mb-6 text-balance text-black" style={{ fontFamily: 'var(--font-playfair)' }}>
+          <div className="rounded-2xl sm:rounded-3xl bg-white/90 ring-1 ring-gray-300/50 backdrop-blur p-6 sm:p-8 md:p-12 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-br before:from-transparent before:via-white/40 before:to-transparent before:translate-x-[-100%] hover:before:translate-x-[100%] before:transition-transform before:duration-2000">
+            <div className="text-center mb-8 sm:mb-12 md:mb-16">
+               <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4 sm:mb-6 text-balance text-black" style={{ fontFamily: 'var(--font-playfair)' }}>
                  Opinie Klientek
                </h2>
-              <p className="text-xl text-gray-700 max-w-3xl mx-auto text-pretty" style={{ fontFamily: 'var(--font-source-sans)' }}>
-                Poznaj historie zadowolonych klientek, które zaufały naszemu doświadczeniu.
-              </p>
-            </div>
+               <p className="text-base sm:text-lg md:text-xl text-gray-700 max-w-2xl sm:max-w-3xl mx-auto text-pretty px-4" style={{ fontFamily: 'var(--font-source-sans)' }}>
+                 Poznaj historie zadowolonych klientek, które zaufały naszemu doświadczeniu.
+               </p>
+             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
               {[
                 {
                   name: "Anna K.",
@@ -443,28 +441,28 @@ export default function HomePage() {
                   text: "Wreszcie znalazłam salon, gdzie czuję się komfortowo. Indywidualne podejście i perfekcyjne wykonanie!",
                 },
               ].map((review) => (
-                <div
-                  key={review.name}
-                  className="rounded-2xl bg-white/80 ring-1 ring-gray-300/50 backdrop-blur p-8 hover:ring-yellow-400/50 transition-all duration-300 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-br before:from-transparent before:via-white/60 before:to-transparent before:translate-x-[-100%] hover:before:translate-x-[100%] before:transition-transform before:duration-1000"
-                >
-                  <div className="flex items-center gap-1 mb-4">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-5 h-5 fill-yellow-400/80 text-yellow-400/80" />
-                    ))}
-                  </div>
-                  <p className="text-gray-700 leading-relaxed mb-6">{review.text}</p>
-                  <div className="flex items-center gap-3">
-                    <img
-                      src={review.image || "/placeholder.svg"}
-                      alt={review.name}
-                      className="w-10 h-10 rounded-full object-cover"
-                    />
-                    <div>
-                      <p className="font-semibold text-gray-900">{review.name}</p>
-                      <p className="text-gray-600 text-sm">{review.role}</p>
-                    </div>
-                  </div>
-                </div>
+                 <div
+                   key={review.name}
+                   className="rounded-xl sm:rounded-2xl bg-white/80 ring-1 ring-gray-300/50 backdrop-blur p-4 sm:p-6 md:p-8 hover:ring-yellow-400/50 transition-all duration-300 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-br before:from-transparent before:via-white/60 before:to-transparent before:translate-x-[-100%] hover:before:translate-x-[100%] before:transition-transform before:duration-1000"
+                 >
+                   <div className="flex items-center gap-1 mb-3 sm:mb-4">
+                     {[...Array(5)].map((_, i) => (
+                       <Star key={i} className="w-4 h-4 sm:w-5 sm:h-5 fill-yellow-400/80 text-yellow-400/80" />
+                     ))}
+                   </div>
+                   <p className="text-gray-700 leading-relaxed mb-4 sm:mb-6 text-sm sm:text-base">{review.text}</p>
+                   <div className="flex items-center gap-2 sm:gap-3">
+                     <img
+                       src={review.image || "/placeholder.svg"}
+                       alt={review.name}
+                       className="w-8 h-8 sm:w-10 sm:h-10 rounded-full object-cover"
+                     />
+                     <div>
+                       <p className="font-semibold text-gray-900 text-sm sm:text-base">{review.name}</p>
+                       <p className="text-gray-600 text-xs sm:text-sm">{review.role}</p>
+                     </div>
+                   </div>
+                 </div>
               ))}
             </div>
           </div>
