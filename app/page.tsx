@@ -262,9 +262,9 @@ export default function HomePage() {
             <Button
               size="lg"
               onClick={() => scrollToSection("contact")}
-              className="relative overflow-hidden bg-gradient-to-r from-white via-gray-50 to-white text-gray-900 hover:from-gray-50 hover:via-white hover:to-gray-50 rounded-full px-6 sm:px-8 md:px-12 py-3 sm:py-4 md:py-6 text-base sm:text-lg md:text-xl font-semibold shadow-2xl shadow-gray-900/20 hover:shadow-gray-900/30 transition-all duration-300 transform hover:scale-105 ring-1 ring-yellow-400/40 hover:ring-yellow-400/60 before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-yellow-400/20 before:to-transparent before:translate-x-[-100%] hover:before:translate-x-[100%] before:transition-transform before:duration-700 after:absolute after:inset-0 after:bg-gradient-to-r after:from-transparent after:via-white/80 after:to-transparent after:translate-x-[-100%] hover:after:translate-x-[100%] after:transition-transform after:duration-1000 after:delay-300"
+              className="relative overflow-hidden bg-gradient-to-r from-white via-gray-50 to-white text-gray-900 hover:from-gray-50 hover:via-white hover:to-gray-50 rounded-full px-8 sm:px-10 md:px-12 py-4 sm:py-5 md:py-6 text-base sm:text-lg md:text-xl font-semibold shadow-2xl shadow-gray-900/20 hover:shadow-gray-900/30 transition-all duration-300 transform hover:scale-105 ring-1 ring-yellow-400/40 hover:ring-yellow-400/60 before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-yellow-400/20 before:to-transparent before:translate-x-[-100%] hover:before:translate-x-[100%] before:transition-transform before:duration-700 after:absolute after:inset-0 after:bg-gradient-to-r after:from-transparent after:via-white/80 after:to-transparent after:translate-x-[-100%] hover:after:translate-x-[100%] after:transition-transform after:duration-1000 after:delay-300 whitespace-nowrap min-w-fit"
             >
-              <span className="text-sm sm:text-base md:text-lg">Umów Wizytę Online</span>
+              <span className="text-base sm:text-lg md:text-xl">Umów Wizytę Online</span>
             </Button>
           </div>
 
@@ -294,7 +294,7 @@ export default function HomePage() {
              </p>
            </div>
 
-           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 max-h-[70vh] sm:max-h-[80vh] overflow-y-auto scrollbar-hide">
+           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 max-h-[60vh] sm:max-h-[70vh] md:max-h-[80vh] overflow-y-auto scrollbar-hide px-2 sm:px-0">
             {[
               {
                 title: "Elegant Bob",
@@ -357,7 +357,7 @@ export default function HomePage() {
           </div>
 
           <div className="text-center mt-8 sm:mt-12">
-            <Button className="relative overflow-hidden bg-black text-white hover:bg-gray-800 rounded-full px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base md:text-lg font-semibold shadow-xl transition-all duration-300 hover:scale-105 ring-2 ring-yellow-400/30 hover:ring-yellow-400/50">
+            <Button className="relative overflow-hidden bg-black text-white hover:bg-gray-800 rounded-full px-8 sm:px-10 md:px-12 py-4 sm:py-5 md:py-6 text-base sm:text-lg md:text-xl font-semibold shadow-xl transition-all duration-300 hover:scale-105 ring-2 ring-yellow-400/30 hover:ring-yellow-400/50 whitespace-nowrap min-w-fit">
               Zobacz Więcej Prac
             </Button>
           </div>
@@ -424,7 +424,7 @@ export default function HomePage() {
             <div className="text-center">
               <Button
                 size="lg"
-                className="relative overflow-hidden bg-gradient-to-r from-white via-gray-50 to-white text-gray-900 hover:from-gray-50 hover:via-white hover:to-gray-50 rounded-full px-6 sm:px-8 md:px-12 py-3 sm:py-4 text-sm sm:text-base md:text-lg font-semibold shadow-xl shadow-gray-900/20 ring-1 ring-yellow-400/30 hover:ring-yellow-400/50 transition-all duration-300 hover:scale-105 before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-yellow-400/20 before:to-transparent before:translate-x-[-100%] hover:before:translate-x-[100%] before:transition-transform before:duration-700 after:absolute after:inset-0 after:bg-gradient-to-r after:from-transparent after:via-white/80 after:to-transparent after:translate-x-[-100%] hover:after:translate-x-[100%] after:transition-transform after:duration-1000 after:delay-200"
+                className="relative overflow-hidden bg-gradient-to-r from-white via-gray-50 to-white text-gray-900 hover:from-gray-50 hover:via-white hover:to-gray-50 rounded-full px-8 sm:px-10 md:px-12 py-4 sm:py-5 md:py-6 text-base sm:text-lg md:text-xl font-semibold shadow-xl shadow-gray-900/20 ring-1 ring-yellow-400/30 hover:ring-yellow-400/50 transition-all duration-300 hover:scale-105 before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-yellow-400/20 before:to-transparent before:translate-x-[-100%] hover:before:translate-x-[100%] before:transition-transform before:duration-700 after:absolute after:inset-0 after:bg-gradient-to-r after:from-transparent after:via-white/80 after:to-transparent after:translate-x-[-100%] hover:after:translate-x-[100%] after:transition-transform after:duration-1000 after:delay-200 whitespace-nowrap min-w-fit"
               >
                 Zobacz Pełną Ofertę
               </Button>
@@ -649,7 +649,7 @@ export default function HomePage() {
                       placeholder="Opisz swoje oczekiwania..."
                     />
                   </div>
-                  <Button className="relative overflow-hidden w-full bg-gray-900 text-white hover:bg-gray-800 rounded-lg py-3 font-semibold text-base shadow-lg before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent before:translate-x-[-100%] hover:before:translate-x-[100%] before:transition-transform before:duration-700 after:absolute after:inset-0 after:bg-gradient-to-r after:from-transparent after:via-yellow-400/20 after:to-transparent after:translate-x-[-100%] hover:after:translate-x-[100%] after:transition-transform after:duration-1000 after:delay-300">
+                  <Button className="relative overflow-hidden w-full bg-gray-900 text-white hover:bg-gray-800 rounded-lg py-4 sm:py-5 font-semibold text-base sm:text-lg shadow-lg before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent before:translate-x-[-100%] hover:before:translate-x-[100%] before:transition-transform before:duration-700 after:absolute after:inset-0 after:bg-gradient-to-r after:from-transparent after:via-yellow-400/20 after:to-transparent after:translate-x-[-100%] hover:after:translate-x-[100%] after:transition-transform after:duration-1000 after:delay-300 whitespace-nowrap min-h-[3rem]">
                     Potwierdź Rezerwację
                   </Button>
                 </form>
