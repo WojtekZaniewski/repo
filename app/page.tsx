@@ -162,7 +162,7 @@ export default function HomePage() {
               <Sparkles className="w-2 h-2 md:w-3 md:h-3 text-yellow-400 absolute -top-1 -right-1 animate-pulse" />
             </div>
             <div className="flex flex-col items-start">
-              <span className="font-bold text-lg md:text-2xl text-black tracking-wider" style={{ fontFamily: 'Inter, sans-serif' }}>LA PASSIONE</span>
+              <span className="font-bold text-lg md:text-2xl text-black tracking-wider" style={{ fontFamily: 'var(--font-inter)' }}>LA PASSIONE</span>
               <span className="font-light text-xs text-gray-600 tracking-widest uppercase hidden sm:block">Salon Fryzjerski</span>
             </div>
           </div>
@@ -209,7 +209,7 @@ export default function HomePage() {
                 <h1
                   className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold tracking-wider mb-4 text-black drop-shadow-2xl text-center relative"
                   style={{ 
-                    fontFamily: 'Inter, sans-serif',
+                    fontFamily: 'var(--font-inter)',
                     textShadow: "3px 3px 6px rgba(0,0,0,0.3), 0 0 30px rgba(255, 215, 0, 0.2)"
                   }}
                 >
@@ -228,7 +228,7 @@ export default function HomePage() {
             <p
               className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-black max-w-3xl mx-auto mb-12 md:mb-16 leading-relaxed text-pretty font-light tracking-wide drop-shadow-sm text-center px-4"
               style={{ 
-                fontFamily: 'Inter, sans-serif',
+                fontFamily: 'var(--font-inter)',
                 textShadow: "2px 2px 4px rgba(0,0,0,0.15)"
               }}
             >
@@ -263,10 +263,10 @@ export default function HomePage() {
       <section className="section-snap scrollable-section relative z-10 min-h-screen flex items-center py-12 md:py-24 px-4 md:px-6 bg-gradient-to-b from-gray-50 via-white to-gray-100">
         <div className="max-w-7xl mx-auto w-full">
           <div className="text-center mb-12 md:mb-16">
-             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 text-black" style={{ fontFamily: 'var(--font-chivo), sans-serif' }}>
+             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 text-black" style={{ fontFamily: 'var(--font-chivo)' }}>
                Portfolio
              </h2>
-            <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto" style={{ fontFamily: 'Inter, sans-serif' }}>
+            <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto" style={{ fontFamily: 'var(--font-inter)' }}>
               Zobacz nasze najnowsze prace i inspiruj się luksusowymi stylizacjami
             </p>
           </div>
@@ -326,7 +326,7 @@ export default function HomePage() {
                       <Sparkles className="w-4 h-4 text-yellow-600" />
                     </div>
                   </div>
-                   <h3 className="text-xl font-bold text-black mb-2" style={{ fontFamily: 'var(--font-chivo), sans-serif' }}>{work.title}</h3>
+                   <h3 className="text-xl font-bold text-black mb-2" style={{ fontFamily: 'var(--font-chivo)' }}>{work.title}</h3>
                   <p className="text-gray-600 text-sm leading-relaxed">{work.description}</p>
                 </div>
               </div>
@@ -349,14 +349,14 @@ export default function HomePage() {
           <div className="rounded-2xl md:rounded-3xl bg-white/90 ring-1 ring-gray-300/50 backdrop-blur-xl p-6 md:p-12 shadow-2xl shadow-gray-900/10 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-br before:from-transparent before:via-white/40 before:to-transparent before:translate-x-[-100%] hover:before:translate-x-[100%] before:transition-transform before:duration-2000">
             <div className="text-center mb-12 md:mb-16">
               <div className="relative inline-block mb-6 md:mb-8">
-                 <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-4 md:mb-6 text-balance text-black" style={{ fontFamily: 'var(--font-chivo), sans-serif' }}>
+                 <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-4 md:mb-6 text-balance text-black" style={{ fontFamily: 'var(--font-chivo)' }}>
                    Nasze Usługi
                  </h2>
                 <div className="absolute -top-1 -right-1 md:-top-2 md:-right-2">
                   <Crown className="w-6 h-6 md:w-8 md:h-8 text-yellow-500 animate-pulse" />
                 </div>
               </div>
-              <p className="text-lg sm:text-xl md:text-2xl text-gray-700 max-w-4xl mx-auto text-pretty font-light leading-relaxed px-4" style={{ fontFamily: 'Inter, sans-serif' }}>
+              <p className="text-lg sm:text-xl md:text-2xl text-gray-700 max-w-4xl mx-auto text-pretty font-light leading-relaxed px-4" style={{ fontFamily: 'var(--font-inter)' }}>
                 Od klasycznych strzyżeń po awangardowe koloryzacje<br/>
                 <span className="text-base md:text-lg text-gray-600 italic">tworzymy luksusowy look idealny dla Ciebie</span>
               </p>
@@ -390,8 +390,8 @@ export default function HomePage() {
                   className="rounded-2xl bg-white/80 ring-1 ring-gray-300/50 backdrop-blur-xl p-8 h-80 flex flex-col hover:ring-yellow-400/50 transition-all duration-300 shadow-xl shadow-gray-900/10 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-br before:from-transparent before:via-white/60 before:to-transparent before:translate-x-[-100%] hover:before:translate-x-[100%] before:transition-transform before:duration-1000"
                 >
                   <div className="flex-1">
-                    <div className="text-3xl font-sans font-bold text-yellow-500 mb-4">{service.num}</div>
-                     <h3 className="text-xl font-semibold mb-4 text-gray-900" style={{ fontFamily: 'var(--font-chivo), sans-serif' }}>{service.title}</h3>
+                    <div className="text-3xl font-bold text-yellow-500 mb-4" style={{ fontFamily: 'var(--font-inter)' }}>{service.num}</div>
+                     <h3 className="text-xl font-semibold mb-4 text-gray-900" style={{ fontFamily: 'var(--font-chivo)' }}>{service.title}</h3>
                     <p className="text-gray-700 leading-relaxed text-sm">{service.desc}</p>
                   </div>
                 </div>
@@ -414,10 +414,10 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto w-full">
           <div className="rounded-3xl bg-white/90 ring-1 ring-gray-300/50 backdrop-blur p-12 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-br before:from-transparent before:via-white/40 before:to-transparent before:translate-x-[-100%] hover:before:translate-x-[100%] before:transition-transform before:duration-2000">
             <div className="text-center mb-16">
-               <h2 className="text-5xl md:text-6xl font-bold tracking-tight mb-6 text-balance text-black" style={{ fontFamily: 'var(--font-chivo), sans-serif' }}>
+               <h2 className="text-5xl md:text-6xl font-bold tracking-tight mb-6 text-balance text-black" style={{ fontFamily: 'var(--font-chivo)' }}>
                  Opinie Klientek
                </h2>
-              <p className="text-xl text-gray-700 max-w-3xl mx-auto text-pretty" style={{ fontFamily: 'Inter, sans-serif' }}>
+              <p className="text-xl text-gray-700 max-w-3xl mx-auto text-pretty" style={{ fontFamily: 'var(--font-inter)' }}>
                 Poznaj historie zadowolonych klientek, które zaufały naszemu doświadczeniu.
               </p>
             </div>
@@ -477,10 +477,10 @@ export default function HomePage() {
           <div className="rounded-3xl bg-white/90 ring-1 ring-gray-300/50 backdrop-blur p-12 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-br before:from-transparent before:via-white/40 before:to-transparent before:translate-x-[-100%] hover:before:translate-x-[100%] before:transition-transform before:duration-2000">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
               <div>
-                 <h2 className="text-5xl md:text-6xl font-bold tracking-tight mb-6 text-balance text-black" style={{ fontFamily: 'var(--font-chivo), sans-serif' }}>
+                 <h2 className="text-5xl md:text-6xl font-bold tracking-tight mb-6 text-balance text-black" style={{ fontFamily: 'var(--font-chivo)' }}>
                    Często Zadawane Pytania
                  </h2>
-                <p className="text-xl text-gray-700 leading-relaxed text-pretty" style={{ fontFamily: 'Inter, sans-serif' }}>
+                <p className="text-xl text-gray-700 leading-relaxed text-pretty" style={{ fontFamily: 'var(--font-inter)' }}>
                   Znajdź odpowiedzi na najczęściej zadawane pytania dotyczące naszych usług, terminów i sposobów
                   rezerwacji.
                 </p>
@@ -496,7 +496,7 @@ export default function HomePage() {
                       onClick={() => toggleFaq(index)}
                       className="w-full p-6 text-left flex items-center justify-between hover:bg-white/70 transition-colors"
                     >
-                       <h3 className="text-lg font-semibold pr-4 text-gray-900" style={{ fontFamily: 'var(--font-chivo), sans-serif' }}>{faq.question}</h3>
+                       <h3 className="text-lg font-semibold pr-4 text-gray-900" style={{ fontFamily: 'var(--font-chivo)' }}>{faq.question}</h3>
                       {openFaq === index ? (
                         <Minus className="w-5 h-5 flex-shrink-0 text-yellow-500" />
                       ) : (
@@ -520,17 +520,17 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto w-full">
           <div className="rounded-3xl bg-white/90 ring-1 ring-gray-300/50 backdrop-blur p-12 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-br before:from-transparent before:via-white/40 before:to-transparent before:translate-x-[-100%] hover:before:translate-x-[100%] before:transition-transform before:duration-2000">
             <div className="text-center mb-16">
-               <h2 className="text-5xl md:text-6xl font-bold tracking-tight mb-6 text-balance text-black" style={{ fontFamily: 'var(--font-chivo), sans-serif' }}>
+               <h2 className="text-5xl md:text-6xl font-bold tracking-tight mb-6 text-balance text-black" style={{ fontFamily: 'var(--font-chivo)' }}>
                  Umów Wizytę
                </h2>
-              <p className="text-xl text-gray-700 max-w-3xl mx-auto text-pretty" style={{ fontFamily: 'Inter, sans-serif' }}>
+              <p className="text-xl text-gray-700 max-w-3xl mx-auto text-pretty" style={{ fontFamily: 'var(--font-inter)' }}>
                 Wybierz dogodny termin i pozwól nam zadbać o Twoje włosy.
               </p>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
               <div className="rounded-2xl bg-gradient-to-br from-white/95 to-gray-100/95 text-gray-900 p-8 shadow-2xl shadow-gray-900/10 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-br before:from-transparent before:via-white/60 before:to-transparent before:translate-x-[-100%] hover:before:translate-x-[100%] before:transition-transform before:duration-1000">
-                 <h3 className="text-2xl font-bold mb-6" style={{ fontFamily: 'var(--font-chivo), sans-serif' }}>Rezerwacja Online</h3>
+                 <h3 className="text-2xl font-bold mb-6" style={{ fontFamily: 'var(--font-chivo)' }}>Rezerwacja Online</h3>
                 <form className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
@@ -655,7 +655,7 @@ export default function HomePage() {
                           <contact.icon className="w-6 h-6 text-white" />
                         </div>
                         <div>
-                           <h4 className="text-lg font-semibold" style={{ fontFamily: 'var(--font-chivo), sans-serif' }}>{contact.title}</h4>
+                           <h4 className="text-lg font-semibold" style={{ fontFamily: 'var(--font-chivo)' }}>{contact.title}</h4>
                           <p className="text-gray-700">{contact.info}</p>
                         </div>
                       </div>

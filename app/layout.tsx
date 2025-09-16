@@ -7,13 +7,7 @@ import "./globals.css"
 
 const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-serif",
-  display: "swap",
-})
-
-const montserrat = Montserrat({
-  subsets: ["latin"],
-  variable: "--font-sans",
+  variable: "--font-inter",
   display: "swap",
 })
 
@@ -37,7 +31,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`font-sans ${inter.variable} ${montserrat.variable} ${chivo.variable}`}>
+      <body className={`${inter.variable} ${chivo.variable}`}>
         <Suspense fallback={null}>{children}</Suspense>
         <Analytics />
       </body>
