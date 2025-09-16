@@ -254,7 +254,7 @@ export default function HomePage() {
       <section className="section-snap relative z-10 min-h-screen flex items-center py-12 md:py-24 px-4 md:px-6 bg-gradient-to-b from-gray-50 via-white to-gray-100">
         <div className="max-w-7xl mx-auto w-full">
           <div className="text-center mb-12 md:mb-16">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 text-black" style={{ fontFamily: 'Chivo, sans-serif' }}>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 text-black" style={{ fontFamily: 'Inter, sans-serif' }}>
               Portfolio
             </h2>
             <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto" style={{ fontFamily: 'Inter, sans-serif' }}>
@@ -317,8 +317,8 @@ export default function HomePage() {
                       <Sparkles className="w-4 h-4 text-yellow-600" />
                     </div>
                   </div>
-                  <h3 className="text-xl font-bold text-black mb-2" style={{ fontFamily: 'Chivo, sans-serif' }}>{work.title}</h3>
-                  <p className="text-gray-600 text-sm leading-relaxed" style={{ fontFamily: 'Inter, sans-serif' }}>{work.description}</p>
+                  <h3 className="text-xl font-bold text-black mb-2" style={{ fontFamily: 'Inter, sans-serif' }}>{work.title}</h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">{work.description}</p>
                 </div>
               </div>
             ))}
@@ -340,7 +340,7 @@ export default function HomePage() {
           <div className="rounded-2xl md:rounded-3xl bg-white/90 ring-1 ring-gray-300/50 backdrop-blur-xl p-6 md:p-12 shadow-2xl shadow-gray-900/10 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-br before:from-transparent before:via-white/40 before:to-transparent before:translate-x-[-100%] hover:before:translate-x-[100%] before:transition-transform before:duration-2000">
             <div className="text-center mb-12 md:mb-16">
               <div className="relative inline-block mb-6 md:mb-8">
-                <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-4 md:mb-6 text-balance text-black" style={{ fontFamily: 'Chivo, sans-serif' }}>
+                <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-4 md:mb-6 text-balance text-black" style={{ fontFamily: 'Inter, sans-serif' }}>
                   Nasze Usługi
                 </h2>
                 <div className="absolute -top-1 -right-1 md:-top-2 md:-right-2">
@@ -405,7 +405,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto w-full">
           <div className="rounded-3xl bg-white/90 ring-1 ring-gray-300/50 backdrop-blur p-12 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-br before:from-transparent before:via-white/40 before:to-transparent before:translate-x-[-100%] hover:before:translate-x-[100%] before:transition-transform before:duration-2000">
             <div className="text-center mb-16">
-              <h2 className="text-5xl md:text-6xl font-bold tracking-tight mb-6 text-balance text-black" style={{ fontFamily: 'Chivo, sans-serif' }}>
+              <h2 className="text-5xl md:text-6xl font-bold tracking-tight mb-6 text-balance text-black" style={{ fontFamily: 'Inter, sans-serif' }}>
                 Opinie Klientek
               </h2>
               <p className="text-xl text-gray-700 max-w-3xl mx-auto text-pretty" style={{ fontFamily: 'Inter, sans-serif' }}>
@@ -468,7 +468,7 @@ export default function HomePage() {
           <div className="rounded-3xl bg-white/90 ring-1 ring-gray-300/50 backdrop-blur p-12 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-br before:from-transparent before:via-white/40 before:to-transparent before:translate-x-[-100%] hover:before:translate-x-[100%] before:transition-transform before:duration-2000">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
               <div>
-                <h2 className="text-5xl md:text-6xl font-bold tracking-tight mb-6 text-balance text-black" style={{ fontFamily: 'Chivo, sans-serif' }}>
+                <h2 className="text-5xl md:text-6xl font-bold tracking-tight mb-6 text-balance text-black" style={{ fontFamily: 'Inter, sans-serif' }}>
                   Często Zadawane Pytania
                 </h2>
                 <p className="text-xl text-gray-700 leading-relaxed text-pretty" style={{ fontFamily: 'Inter, sans-serif' }}>
@@ -487,7 +487,7 @@ export default function HomePage() {
                       onClick={() => toggleFaq(index)}
                       className="w-full p-6 text-left flex items-center justify-between hover:bg-white/70 transition-colors"
                     >
-                      <h3 className="text-lg font-semibold pr-4 text-gray-900" style={{ fontFamily: 'Chivo, sans-serif' }}>{faq.question}</h3>
+                      <h3 className="text-lg font-semibold pr-4 text-gray-900">{faq.question}</h3>
                       {openFaq === index ? (
                         <Minus className="w-5 h-5 flex-shrink-0 text-yellow-500" />
                       ) : (
@@ -496,7 +496,7 @@ export default function HomePage() {
                     </button>
                     {openFaq === index && (
                       <div className="px-6 pb-6">
-                        <p className="text-gray-700 leading-relaxed" style={{ fontFamily: 'Inter, sans-serif' }}>{faq.answer}</p>
+                        <p className="text-gray-700 leading-relaxed">{faq.answer}</p>
                       </div>
                     )}
                   </div>
@@ -511,7 +511,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto w-full">
           <div className="rounded-3xl bg-white/90 ring-1 ring-gray-300/50 backdrop-blur p-12 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-br before:from-transparent before:via-white/40 before:to-transparent before:translate-x-[-100%] hover:before:translate-x-[100%] before:transition-transform before:duration-2000">
             <div className="text-center mb-16">
-              <h2 className="text-5xl md:text-6xl font-bold tracking-tight mb-6 text-balance text-black" style={{ fontFamily: 'Chivo, sans-serif' }}>
+              <h2 className="text-5xl md:text-6xl font-bold tracking-tight mb-6 text-balance text-black" style={{ fontFamily: 'Inter, sans-serif' }}>
                 Umów Wizytę
               </h2>
               <p className="text-xl text-gray-700 max-w-3xl mx-auto text-pretty" style={{ fontFamily: 'Inter, sans-serif' }}>
@@ -521,7 +521,7 @@ export default function HomePage() {
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
               <div className="rounded-2xl bg-gradient-to-br from-white/95 to-gray-100/95 text-gray-900 p-8 shadow-2xl shadow-gray-900/10 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-br before:from-transparent before:via-white/60 before:to-transparent before:translate-x-[-100%] hover:before:translate-x-[100%] before:transition-transform before:duration-1000">
-                <h3 className="text-2xl font-bold mb-6" style={{ fontFamily: 'Chivo, sans-serif' }}>Rezerwacja Online</h3>
+                <h3 className="text-2xl font-bold mb-6">Rezerwacja Online</h3>
                 <form className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
@@ -646,8 +646,8 @@ export default function HomePage() {
                           <contact.icon className="w-6 h-6 text-white" />
                         </div>
                         <div>
-                          <h4 className="text-lg font-semibold" style={{ fontFamily: 'Chivo, sans-serif' }}>{contact.title}</h4>
-                          <p className="text-gray-700" style={{ fontFamily: 'Inter, sans-serif' }}>{contact.info}</p>
+                          <h4 className="text-lg font-semibold">{contact.title}</h4>
+                          <p className="text-gray-700">{contact.info}</p>
                         </div>
                       </div>
                     </div>
