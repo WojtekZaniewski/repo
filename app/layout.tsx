@@ -1,20 +1,22 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Inter, Montserrat, Chivo } from "next/font/google"
+import { Playfair_Display, Source_Sans_3 } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { Suspense } from "react"
 import "./globals.css"
 
-const inter = Inter({
+const playfair = Playfair_Display({
   subsets: ["latin"],
-  variable: "--font-inter",
+  variable: "--font-playfair",
   display: "swap",
+  weight: ["400", "500", "600", "700", "800", "900"],
 })
 
-const chivo = Chivo({
+const sourceSans = Source_Sans_3({
   subsets: ["latin"],
-  variable: "--font-chivo",
+  variable: "--font-source-sans",
   display: "swap",
+  weight: ["300", "400", "500", "600", "700"],
 })
 
 export const metadata: Metadata = {
@@ -31,7 +33,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${chivo.variable}`}>
+      <body className={`${playfair.variable} ${sourceSans.variable}`}>
         <Suspense fallback={null}>{children}</Suspense>
         <Analytics />
       </body>
