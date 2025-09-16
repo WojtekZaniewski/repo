@@ -1,15 +1,15 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Playfair_Display, Source_Sans_3 } from "next/font/google"
+import { Montserrat, Source_Sans_3 } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { Suspense } from "react"
 import "./globals.css"
 
-const playfair = Playfair_Display({
+const montserrat = Montserrat({
   subsets: ["latin"],
-  variable: "--font-playfair",
+  variable: "--font-montserrat",
   display: "swap",
-  weight: ["400", "500", "600", "700", "800", "900"],
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
 })
 
 const sourceSans = Source_Sans_3({
@@ -33,7 +33,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${playfair.variable} ${sourceSans.variable}`}>
+      <body className={`${montserrat.variable} ${sourceSans.variable}`}>
         <Suspense fallback={null}>{children}</Suspense>
         <Analytics />
       </body>

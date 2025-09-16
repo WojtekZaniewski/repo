@@ -217,22 +217,9 @@ export default function HomePage() {
                     <Gem className="w-4 h-4 sm:w-5 sm:h-5 md:w-8 md:h-8 text-yellow-500 animate-pulse" />
                   </div>
                 </h1>
-                <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-32 sm:w-40 md:w-48 h-1 bg-gradient-to-r from-transparent via-yellow-500/80 to-transparent rounded-full"></div>
-                <div className="absolute -bottom-0.5 sm:-bottom-1 md:-bottom-2 left-1/2 transform -translate-x-1/2 text-white font-light text-xs sm:text-sm md:text-lg tracking-widest drop-shadow-lg" style={{ textShadow: "2px 2px 4px rgba(0,0,0,0.8)" }}>
-                  ✦ Salon Fryzjerski Premium ✦
-                </div>
               </div>
             </div>
 
-            <p
-              className="text-base sm:text-lg md:text-xl lg:text-2xl text-black max-w-2xl sm:max-w-3xl mx-auto mb-8 sm:mb-12 md:mb-16 leading-relaxed text-pretty font-light tracking-wide drop-shadow-sm text-center px-4"
-              style={{ 
-                fontFamily: 'var(--font-source-sans)',
-                textShadow: "2px 2px 4px rgba(0,0,0,0.15)"
-              }}
-            >
-              Gdzie elegancja spotyka się z pasją
-            </p>
 
             <Button
               size="lg"
