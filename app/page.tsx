@@ -127,7 +127,7 @@ export default function HomePage() {
         </div>
 
         <nav className="relative z-10 flex items-center justify-between p-6">
-          <div className="flex items-center gap-2 px-4 py-2 bg-transparent ring-1 ring-gray-300/50 backdrop-blur-xl rounded-full shadow-lg shadow-gray-900/10 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/40 before:to-transparent before:translate-x-[-100%] hover:before:translate-x-[100%] before:transition-transform before:duration-1000">
+          <div className="flex items-center gap-2 px-4 py-2 bg-white/70 ring-1 ring-gray-300/50 backdrop-blur-xl rounded-full shadow-lg shadow-gray-900/10 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/40 before:to-transparent before:translate-x-[-100%] hover:before:translate-x-[100%] before:transition-transform before:duration-1000">
             <Scissors className="w-5 h-5 text-gray-800" />
             <span className="font-serif font-medium text-gray-800">LA PASSIONE</span>
           </div>
@@ -142,7 +142,7 @@ export default function HomePage() {
               <button
                 key={item.name}
                 onClick={() => scrollToSection(item.id)}
-                className="px-4 py-2 bg-transparent ring-1 ring-gray-300/40 backdrop-blur-xl rounded-full hover:bg-white/20 hover:ring-gray-400/50 transition-all duration-300 shadow-lg shadow-gray-900/10 hover:scale-105 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/50 before:to-transparent before:translate-x-[-100%] hover:before:translate-x-[100%] before:transition-transform before:duration-700 text-gray-800"
+                className="px-4 py-2 bg-white/60 ring-1 ring-gray-300/40 backdrop-blur-xl rounded-full hover:bg-white/80 hover:ring-gray-400/50 transition-all duration-300 shadow-lg shadow-gray-900/10 hover:scale-105 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/50 before:to-transparent before:translate-x-[-100%] hover:before:translate-x-[100%] before:transition-transform before:duration-700 text-gray-800"
               >
                 {item.name}
               </button>
@@ -152,7 +152,7 @@ export default function HomePage() {
           <div className="flex items-center gap-3">
             <Button
               onClick={() => scrollToSection("contact")}
-              className="relative overflow-hidden bg-transparent text-gray-900 hover:bg-white/20 rounded-full px-6 font-semibold shadow-xl shadow-gray-900/20 ring-1 ring-yellow-400/30 hover:ring-yellow-400/50 transition-all duration-300 hover:scale-105 before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-yellow-400/20 before:to-transparent before:translate-x-[-100%] hover:before:translate-x-[100%] before:transition-transform before:duration-700 after:absolute after:inset-0 after:bg-gradient-to-r after:from-transparent after:via-white/60 after:to-transparent after:translate-x-[-100%] hover:after:translate-x-[100%] after:transition-transform after:duration-1000 after:delay-200"
+              className="relative overflow-hidden bg-gradient-to-r from-white via-gray-50 to-white text-gray-900 hover:from-gray-50 hover:via-white hover:to-gray-50 rounded-full px-6 font-semibold shadow-xl shadow-gray-900/20 ring-1 ring-yellow-400/30 transition-all duration-300 hover:scale-105 before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-yellow-400/20 before:to-transparent before:translate-x-[-100%] hover:before:translate-x-[100%] before:transition-transform before:duration-700 after:absolute after:inset-0 after:bg-gradient-to-r after:from-transparent after:via-white/60 after:to-transparent after:translate-x-[-100%] hover:after:translate-x-[100%] after:transition-transform after:duration-1000 after:delay-200"
             >
               Umów Wizytę
             </Button>
