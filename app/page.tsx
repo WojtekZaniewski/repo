@@ -17,9 +17,6 @@ export default function HomePage() {
     let scrollTimeout: NodeJS.Timeout
     
     const handleWheel = (e: WheelEvent) => {
-      // Disable custom scroll on mobile devices
-      if (window.innerWidth < 768) return
-      
       if (isScrolling) return
 
       // Check if we're in a scrollable section (like portfolio)
@@ -39,7 +36,7 @@ export default function HomePage() {
 
       const sections = document.querySelectorAll(".section-snap")
       const totalSections = sections.length
-      const scrollThreshold = 50 // Minimum scroll distance
+      const scrollThreshold = window.innerWidth < 768 ? 30 : 50 // Lower threshold on mobile
 
       if (Math.abs(e.deltaY) < scrollThreshold) {
         isScrolling = false
@@ -58,25 +55,66 @@ export default function HomePage() {
         sections[prevSection]?.scrollIntoView({ behavior: "smooth" })
       }
 
-      // Reset scrolling flag after animation with shorter timeout
+      // Reset scrolling flag after animation
       scrollTimeout = setTimeout(() => {
         isScrolling = false
-      }, 800)
+      }, window.innerWidth < 768 ? 600 : 800)
+    }
+
+    // Touch handling for mobile
+    const handleTouchStart = (e: TouchEvent) => {
+      if (isScrolling) return
+      
+      const touch = e.touches[0]
+      const startY = touch.clientY
+      
+      const handleTouchMove = (e: TouchEvent) => {
+        if (isScrolling) return
+        
+        const touch = e.touches[0]
+        const currentY = touch.clientY
+        const deltaY = startY - currentY
+        
+        if (Math.abs(deltaY) > 50) { // Touch threshold
+          e.preventDefault()
+          isScrolling = true
+          
+          const sections = document.querySelectorAll(".section-snap")
+          const totalSections = sections.length
+          
+          if (deltaY > 0 && currentSection < totalSections - 1) {
+            // Swipe up - scroll down
+            const nextSection = currentSection + 1
+            setCurrentSection(nextSection)
+            sections[nextSection]?.scrollIntoView({ behavior: "smooth" })
+          } else if (deltaY < 0 && currentSection > 0) {
+            // Swipe down - scroll up
+            const prevSection = currentSection - 1
+            setCurrentSection(prevSection)
+            sections[prevSection]?.scrollIntoView({ behavior: "smooth" })
+          }
+          
+          setTimeout(() => {
+            isScrolling = false
+          }, 600)
+          
+          document.removeEventListener('touchmove', handleTouchMove)
+        }
+      }
+      
+      document.addEventListener('touchmove', handleTouchMove, { passive: false })
     }
 
     window.addEventListener("scroll", handleScroll)
     window.addEventListener("mousemove", handleMouseMove)
-    // Only add wheel listener on desktop
-    if (window.innerWidth >= 768) {
-      window.addEventListener("wheel", handleWheel, { passive: false })
-    }
+    window.addEventListener("wheel", handleWheel, { passive: false })
+    window.addEventListener("touchstart", handleTouchStart, { passive: false })
 
     return () => {
       window.removeEventListener("scroll", handleScroll)
       window.removeEventListener("mousemove", handleMouseMove)
-      if (window.innerWidth >= 768) {
-        window.removeEventListener("wheel", handleWheel)
-      }
+      window.removeEventListener("wheel", handleWheel)
+      window.removeEventListener("touchstart", handleTouchStart)
       if (scrollTimeout) clearTimeout(scrollTimeout)
     }
   }, [currentSection])
@@ -188,9 +226,9 @@ export default function HomePage() {
           <div className="flex items-center">
             <Button
               onClick={() => scrollToSection("contact")}
-              className="relative overflow-hidden bg-transparent text-gray-900 hover:bg-white/20 rounded-full px-3 sm:px-4 md:px-6 py-1.5 sm:py-2 md:py-3 font-semibold shadow-xl shadow-gray-900/20 ring-1 ring-yellow-400/30 hover:ring-yellow-400/50 transition-all duration-300 hover:scale-105 text-xs sm:text-sm md:text-base"
+              className="relative overflow-hidden bg-transparent text-gray-900 hover:bg-white/20 rounded-full px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 md:py-3 font-semibold shadow-xl shadow-gray-900/20 ring-1 ring-yellow-400/30 hover:ring-yellow-400/50 transition-all duration-300 hover:scale-105 text-sm sm:text-base md:text-base whitespace-nowrap min-w-fit"
             >
-              <span className="text-xs sm:text-sm md:text-base">Umów Wizytę</span>
+              <span className="text-sm sm:text-base md:text-base">Umów Wizytę</span>
             </Button>
           </div>
         </nav>
