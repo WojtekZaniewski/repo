@@ -121,9 +121,9 @@ export default function HomePage() {
               }}
             />
           </video>
-          <div className="absolute inset-0 bg-gradient-to-br from-amber-50/40 via-white/50 to-amber-100/30" />
-          <div className="absolute inset-0 bg-gradient-to-b from-amber-50/30 via-white/40 to-amber-50/50" />
-          <div className="absolute inset-0 bg-gradient-radial from-transparent via-amber-50/20 to-amber-100/40" />
+          <div className="absolute inset-0 bg-white/20" />
+          <div className="absolute inset-0 bg-gradient-to-b from-white/10 via-transparent to-white/20" />
+          <div className="absolute inset-0 bg-gradient-radial from-transparent via-white/5 to-white/15" />
           {/* Luksusowe elementy dekoracyjne */}
           <div className="absolute top-20 left-10 w-32 h-32 border border-amber-200/30 rounded-full animate-pulse"></div>
           <div className="absolute bottom-20 right-10 w-24 h-24 border border-amber-300/40 rounded-full animate-pulse delay-1000"></div>
@@ -131,14 +131,14 @@ export default function HomePage() {
         </div>
 
         <nav className="relative z-10 flex items-center justify-between p-6">
-          <div className="flex items-center gap-3 px-6 py-3 bg-transparent ring-1 ring-amber-200/60 backdrop-blur-xl rounded-full shadow-lg shadow-amber-900/20 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-amber-50/30 before:to-transparent before:translate-x-[-100%] hover:before:translate-x-[100%] before:transition-transform before:duration-1000">
+          <div className="flex items-center gap-3 px-6 py-3 bg-transparent ring-1 ring-yellow-400/40 backdrop-blur-xl rounded-full shadow-lg shadow-black/20 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-yellow-400/20 before:to-transparent before:translate-x-[-100%] hover:before:translate-x-[100%] before:transition-transform before:duration-1000">
             <div className="relative">
-              <Crown className="w-6 h-6 text-amber-600" />
-              <Sparkles className="w-3 h-3 text-amber-400 absolute -top-1 -right-1 animate-pulse" />
+              <Crown className="w-6 h-6 text-yellow-500" />
+              <Sparkles className="w-3 h-3 text-yellow-400 absolute -top-1 -right-1 animate-pulse" />
             </div>
             <div className="flex flex-col items-start">
-              <span className="font-serif font-bold text-2xl text-amber-800 tracking-wider" style={{ fontFamily: 'Playfair Display, serif' }}>LA PASSIONE</span>
-              <span className="font-sans text-xs text-amber-600 tracking-widest uppercase">Salon Fryzjerski</span>
+              <span className="font-bold text-2xl text-black tracking-wider" style={{ fontFamily: 'Inter, sans-serif' }}>LA PASSIONE</span>
+              <span className="font-light text-xs text-gray-600 tracking-widest uppercase">Salon Fryzjerski</span>
             </div>
           </div>
 
@@ -180,33 +180,33 @@ export default function HomePage() {
             <div className="text-center mb-8">
               <div className="relative inline-block">
                 <h1
-                  className="text-7xl md:text-8xl lg:text-9xl font-serif font-bold tracking-wider mb-4 text-amber-900 drop-shadow-2xl text-center relative"
+                  className="text-7xl md:text-8xl lg:text-9xl font-bold tracking-wider mb-4 text-black drop-shadow-2xl text-center relative"
                   style={{ 
-                    fontFamily: 'Playfair Display, serif',
-                    textShadow: "3px 3px 6px rgba(0,0,0,0.2), 0 0 30px rgba(251, 191, 36, 0.3)"
+                    fontFamily: 'Inter, sans-serif',
+                    textShadow: "3px 3px 6px rgba(0,0,0,0.3), 0 0 30px rgba(255, 215, 0, 0.2)"
                   }}
                 >
                   LA PASSIONE
                   <div className="absolute -top-4 -right-4">
-                    <Gem className="w-8 h-8 text-amber-400 animate-pulse" />
+                    <Gem className="w-8 h-8 text-yellow-500 animate-pulse" />
                   </div>
                 </h1>
-                <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-48 h-1 bg-gradient-to-r from-transparent via-amber-400/80 to-transparent rounded-full"></div>
-                <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 text-amber-600 font-serif text-lg tracking-widest">
+                <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-48 h-1 bg-gradient-to-r from-transparent via-yellow-500/80 to-transparent rounded-full"></div>
+                <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 text-gray-600 font-light text-lg tracking-widest">
                   ✦ Salon Fryzjerski Premium ✦
                 </div>
               </div>
             </div>
 
             <p
-              className="text-2xl md:text-3xl text-amber-800 max-w-3xl mx-auto mb-16 leading-relaxed text-pretty font-light tracking-wide drop-shadow-sm text-center"
+              className="text-2xl md:text-3xl text-black max-w-3xl mx-auto mb-16 leading-relaxed text-pretty font-light tracking-wide drop-shadow-sm text-center"
               style={{ 
-                fontFamily: 'Playfair Display, serif',
+                fontFamily: 'Inter, sans-serif',
                 textShadow: "2px 2px 4px rgba(0,0,0,0.15)"
               }}
             >
               Gdzie elegancja spotyka się z pasją<br/>
-              <span className="text-lg text-amber-600 italic">Tworzymy niepowtarzalne stylizacje z dbałością o każdy detal</span>
+              <span className="text-lg text-gray-600 italic">Tworzymy niepowtarzalne stylizacje z dbałością o każdy detal</span>
             </p>
 
             <Button
@@ -236,35 +236,35 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto w-full">
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
             <div className="rounded-2xl bg-white/80 ring-1 ring-gray-300/40 backdrop-blur-xl p-8 text-center shadow-xl shadow-gray-900/10 hover:ring-yellow-400/50 transition-all duration-300 cursor-pointer transform hover:scale-105 active:scale-95 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-br before:from-transparent before:via-white/60 before:to-transparent before:translate-x-[-100%] hover:before:translate-x-[100%] before:transition-transform before:duration-1000">
-              <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-gradient-to-br from-amber-50 to-amber-100 ring-2 ring-amber-300/50 backdrop-blur-xl mb-6 shadow-xl shadow-amber-900/20 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-amber-300/30 before:to-transparent before:translate-x-[-100%] hover:before:translate-x-[100%] before:transition-transform before:duration-700">
-                <Crown className="w-7 h-7 text-amber-600" />
+              <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-gradient-to-br from-yellow-50 to-yellow-100 ring-2 ring-yellow-300/50 backdrop-blur-xl mb-6 shadow-xl shadow-black/20 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-yellow-300/30 before:to-transparent before:translate-x-[-100%] hover:before:translate-x-[100%] before:transition-transform before:duration-700">
+                <Crown className="w-7 h-7 text-yellow-600" />
               </div>
-              <h3 className="text-xl font-serif font-bold mb-4 text-amber-900" style={{ fontFamily: 'Playfair Display, serif' }}>Doświadczeni Styliści</h3>
-              <p className="text-amber-700 leading-relaxed font-light">Nasz zespół to pasjonaci z wieloletnim doświadczeniem w tworzeniu luksusowych stylizacji.</p>
+              <h3 className="text-xl font-bold mb-4 text-black" style={{ fontFamily: 'Inter, sans-serif' }}>Doświadczeni Styliści</h3>
+              <p className="text-gray-700 leading-relaxed font-light">Nasz zespół to pasjonaci z wieloletnim doświadczeniem w tworzeniu luksusowych stylizacji.</p>
             </div>
 
             <div className="rounded-2xl bg-white/80 ring-1 ring-gray-300/40 backdrop-blur-xl p-8 text-center shadow-xl shadow-gray-900/10 hover:ring-yellow-400/50 transition-all duration-300 cursor-pointer transform hover:scale-105 active:scale-95 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-br before:from-transparent before:via-white/60 before:to-transparent before:translate-x-[-100%] hover:before:translate-x-[100%] before:transition-transform before:duration-1000">
-              <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-gradient-to-br from-amber-50 to-amber-100 ring-2 ring-amber-300/50 backdrop-blur-xl mb-6 shadow-xl shadow-amber-900/20 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-amber-300/30 before:to-transparent before:translate-x-[-100%] hover:before:translate-x-[100%] before:transition-transform before:duration-700">
-                <Gem className="w-7 h-7 text-amber-600" />
+              <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-gradient-to-br from-yellow-50 to-yellow-100 ring-2 ring-yellow-300/50 backdrop-blur-xl mb-6 shadow-xl shadow-black/20 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-yellow-300/30 before:to-transparent before:translate-x-[-100%] hover:before:translate-x-[100%] before:transition-transform before:duration-700">
+                <Gem className="w-7 h-7 text-yellow-600" />
               </div>
-              <h3 className="text-xl font-serif font-bold mb-4 text-amber-900" style={{ fontFamily: 'Playfair Display, serif' }}>Najwyższa Jakość</h3>
-              <p className="text-amber-700 leading-relaxed font-light">Używamy wyłącznie luksusowych produktów premium od światowych marek.</p>
+              <h3 className="text-xl font-bold mb-4 text-black" style={{ fontFamily: 'Inter, sans-serif' }}>Najwyższa Jakość</h3>
+              <p className="text-gray-700 leading-relaxed font-light">Używamy wyłącznie luksusowych produktów premium od światowych marek.</p>
             </div>
 
             <div className="rounded-2xl bg-white/80 ring-1 ring-gray-300/40 backdrop-blur-xl p-8 text-center shadow-xl shadow-gray-900/10 hover:ring-yellow-400/50 transition-all duration-300 cursor-pointer transform hover:scale-105 active:scale-95 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-br before:from-transparent before:via-white/60 before:to-transparent before:translate-x-[-100%] hover:before:translate-x-[100%] before:transition-transform before:duration-1000">
-              <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-gradient-to-br from-amber-50 to-amber-100 ring-2 ring-amber-300/50 backdrop-blur-xl mb-6 shadow-xl shadow-amber-900/20 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-amber-300/30 before:to-transparent before:translate-x-[-100%] hover:before:translate-x-[100%] before:transition-transform before:duration-700">
-                <Scissors className="w-7 h-7 text-amber-600" />
+              <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-gradient-to-br from-yellow-50 to-yellow-100 ring-2 ring-yellow-300/50 backdrop-blur-xl mb-6 shadow-xl shadow-black/20 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-yellow-300/30 before:to-transparent before:translate-x-[-100%] hover:before:translate-x-[100%] before:transition-transform before:duration-700">
+                <Scissors className="w-7 h-7 text-yellow-600" />
               </div>
-              <h3 className="text-xl font-serif font-bold mb-4 text-amber-900" style={{ fontFamily: 'Playfair Display, serif' }}>Indywidualne Podejście</h3>
-              <p className="text-amber-700 leading-relaxed font-light">Każda stylizacja jest tworzona specjalnie dla Ciebie z dbałością o każdy detal.</p>
+              <h3 className="text-xl font-bold mb-4 text-black" style={{ fontFamily: 'Inter, sans-serif' }}>Indywidualne Podejście</h3>
+              <p className="text-gray-700 leading-relaxed font-light">Każda stylizacja jest tworzona specjalnie dla Ciebie z dbałością o każdy detal.</p>
             </div>
 
             <div className="rounded-2xl bg-white/80 ring-1 ring-gray-300/40 backdrop-blur-xl p-8 text-center shadow-xl shadow-gray-900/10 hover:ring-yellow-400/50 transition-all duration-300 cursor-pointer transform hover:scale-105 active:scale-95 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-br before:from-transparent before:via-white/60 before:to-transparent before:translate-x-[-100%] hover:before:translate-x-[100%] before:transition-transform before:duration-1000">
-              <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-gradient-to-br from-amber-50 to-amber-100 ring-2 ring-amber-300/50 backdrop-blur-xl mb-6 shadow-xl shadow-amber-900/20 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-amber-300/30 before:to-transparent before:translate-x-[-100%] hover:before:translate-x-[100%] before:transition-transform before:duration-700">
-                <Sparkles className="w-7 h-7 text-amber-600" />
+              <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-gradient-to-br from-yellow-50 to-yellow-100 ring-2 ring-yellow-300/50 backdrop-blur-xl mb-6 shadow-xl shadow-black/20 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-yellow-300/30 before:to-transparent before:translate-x-[-100%] hover:before:translate-x-[100%] before:transition-transform before:duration-700">
+                <Sparkles className="w-7 h-7 text-yellow-600" />
               </div>
-              <h3 className="text-xl font-serif font-bold mb-4 text-amber-900" style={{ fontFamily: 'Playfair Display, serif' }}>Luksusowe Doświadczenie</h3>
-              <p className="text-amber-700 leading-relaxed font-light">Elastyczne terminy i luksusowa atmosfera dopasowana do Twojego stylu życia.</p>
+              <h3 className="text-xl font-bold mb-4 text-black" style={{ fontFamily: 'Inter, sans-serif' }}>Luksusowe Doświadczenie</h3>
+              <p className="text-gray-700 leading-relaxed font-light">Elastyczne terminy i luksusowa atmosfera dopasowana do Twojego stylu życia.</p>
             </div>
           </div>
         </div>
@@ -278,16 +278,16 @@ export default function HomePage() {
           <div className="rounded-3xl bg-white/90 ring-1 ring-gray-300/50 backdrop-blur-xl p-12 shadow-2xl shadow-gray-900/10 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-br before:from-transparent before:via-white/40 before:to-transparent before:translate-x-[-100%] hover:before:translate-x-[100%] before:transition-transform before:duration-2000">
             <div className="text-center mb-16">
               <div className="relative inline-block mb-8">
-                <h2 className="text-6xl md:text-7xl font-serif font-bold tracking-tight mb-6 text-balance text-amber-900" style={{ fontFamily: 'Playfair Display, serif' }}>
+                <h2 className="text-6xl md:text-7xl font-bold tracking-tight mb-6 text-balance text-black" style={{ fontFamily: 'Inter, sans-serif' }}>
                   Nasze Usługi
                 </h2>
                 <div className="absolute -top-2 -right-2">
-                  <Crown className="w-8 h-8 text-amber-400 animate-pulse" />
+                  <Crown className="w-8 h-8 text-yellow-500 animate-pulse" />
                 </div>
               </div>
-              <p className="text-2xl text-amber-700 max-w-4xl mx-auto text-pretty font-light leading-relaxed" style={{ fontFamily: 'Playfair Display, serif' }}>
+              <p className="text-2xl text-gray-700 max-w-4xl mx-auto text-pretty font-light leading-relaxed" style={{ fontFamily: 'Inter, sans-serif' }}>
                 Od klasycznych strzyżeń po awangardowe koloryzacje<br/>
-                <span className="text-lg text-amber-600 italic">tworzymy luksusowy look idealny dla Ciebie</span>
+                <span className="text-lg text-gray-600 italic">tworzymy luksusowy look idealny dla Ciebie</span>
               </p>
             </div>
 
@@ -343,10 +343,10 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto w-full">
           <div className="rounded-3xl bg-white/90 ring-1 ring-gray-300/50 backdrop-blur p-12 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-br before:from-transparent before:via-white/40 before:to-transparent before:translate-x-[-100%] hover:before:translate-x-[100%] before:transition-transform before:duration-2000">
             <div className="text-center mb-16">
-              <h2 className="text-5xl md:text-6xl font-sans font-bold tracking-tight mb-6 text-balance text-gray-900">
+              <h2 className="text-5xl md:text-6xl font-bold tracking-tight mb-6 text-balance text-black" style={{ fontFamily: 'Inter, sans-serif' }}>
                 Opinie Klientek
               </h2>
-              <p className="text-xl text-gray-700 max-w-3xl mx-auto text-pretty">
+              <p className="text-xl text-gray-700 max-w-3xl mx-auto text-pretty" style={{ fontFamily: 'Inter, sans-serif' }}>
                 Poznaj historie zadowolonych klientek, które zaufały naszemu doświadczeniu.
               </p>
             </div>
@@ -406,10 +406,10 @@ export default function HomePage() {
           <div className="rounded-3xl bg-white/90 ring-1 ring-gray-300/50 backdrop-blur p-12 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-br before:from-transparent before:via-white/40 before:to-transparent before:translate-x-[-100%] hover:before:translate-x-[100%] before:transition-transform before:duration-2000">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
               <div>
-                <h2 className="text-5xl md:text-6xl font-sans font-bold tracking-tight mb-6 text-balance text-gray-900">
+                <h2 className="text-5xl md:text-6xl font-bold tracking-tight mb-6 text-balance text-black" style={{ fontFamily: 'Inter, sans-serif' }}>
                   Często Zadawane Pytania
                 </h2>
-                <p className="text-xl text-gray-700 leading-relaxed text-pretty">
+                <p className="text-xl text-gray-700 leading-relaxed text-pretty" style={{ fontFamily: 'Inter, sans-serif' }}>
                   Znajdź odpowiedzi na najczęściej zadawane pytania dotyczące naszych usług, terminów i sposobów
                   rezerwacji.
                 </p>
@@ -449,10 +449,10 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto w-full">
           <div className="rounded-3xl bg-white/90 ring-1 ring-gray-300/50 backdrop-blur p-12 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-br before:from-transparent before:via-white/40 before:to-transparent before:translate-x-[-100%] hover:before:translate-x-[100%] before:transition-transform before:duration-2000">
             <div className="text-center mb-16">
-              <h2 className="text-5xl md:text-6xl font-sans font-bold tracking-tight mb-6 text-balance text-gray-900">
+              <h2 className="text-5xl md:text-6xl font-bold tracking-tight mb-6 text-balance text-black" style={{ fontFamily: 'Inter, sans-serif' }}>
                 Umów Wizytę
               </h2>
-              <p className="text-xl text-gray-700 max-w-3xl mx-auto text-pretty">
+              <p className="text-xl text-gray-700 max-w-3xl mx-auto text-pretty" style={{ fontFamily: 'Inter, sans-serif' }}>
                 Wybierz dogodny termin i pozwól nam zadbać o Twoje włosy.
               </p>
             </div>
