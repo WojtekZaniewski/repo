@@ -61,60 +61,65 @@ export default function HomePage() {
       }, window.innerWidth < 768 ? 600 : 800)
     }
 
-    // Touch handling for mobile
+    // Touch handling for mobile - improved
+    let touchStartY = 0
+    let touchStartTime = 0
+    
     const handleTouchStart = (e: TouchEvent) => {
       if (isScrolling) return
       
       const touch = e.touches[0]
-      const startY = touch.clientY
+      touchStartY = touch.clientY
+      touchStartTime = Date.now()
+    }
+    
+    const handleTouchEnd = (e: TouchEvent) => {
+      if (isScrolling) return
       
-      const handleTouchMove = (e: TouchEvent) => {
-        if (isScrolling) return
+      const touch = e.changedTouches[0]
+      const touchEndY = touch.clientY
+      const touchEndTime = Date.now()
+      const deltaY = touchStartY - touchEndY
+      const deltaTime = touchEndTime - touchStartTime
+      
+      // Only trigger if swipe is fast enough and far enough
+      if (Math.abs(deltaY) > 80 && deltaTime < 500) {
+        e.preventDefault()
+        isScrolling = true
         
-        const touch = e.touches[0]
-        const currentY = touch.clientY
-        const deltaY = startY - currentY
+        const sections = document.querySelectorAll(".section-snap")
+        const totalSections = sections.length
         
-        if (Math.abs(deltaY) > 50) { // Touch threshold
-          e.preventDefault()
-          isScrolling = true
-          
-          const sections = document.querySelectorAll(".section-snap")
-          const totalSections = sections.length
-          
-          if (deltaY > 0 && currentSection < totalSections - 1) {
-            // Swipe up - scroll down
-            const nextSection = currentSection + 1
-            setCurrentSection(nextSection)
-            sections[nextSection]?.scrollIntoView({ behavior: "smooth" })
-          } else if (deltaY < 0 && currentSection > 0) {
-            // Swipe down - scroll up
-            const prevSection = currentSection - 1
-            setCurrentSection(prevSection)
-            sections[prevSection]?.scrollIntoView({ behavior: "smooth" })
-          }
-          
-          setTimeout(() => {
-            isScrolling = false
-          }, 600)
-          
-          document.removeEventListener('touchmove', handleTouchMove)
+        if (deltaY > 0 && currentSection < totalSections - 1) {
+          // Swipe up - scroll down
+          const nextSection = currentSection + 1
+          setCurrentSection(nextSection)
+          sections[nextSection]?.scrollIntoView({ behavior: "smooth" })
+        } else if (deltaY < 0 && currentSection > 0) {
+          // Swipe down - scroll up
+          const prevSection = currentSection - 1
+          setCurrentSection(prevSection)
+          sections[prevSection]?.scrollIntoView({ behavior: "smooth" })
         }
+        
+        setTimeout(() => {
+          isScrolling = false
+        }, 800)
       }
-      
-      document.addEventListener('touchmove', handleTouchMove, { passive: false })
     }
 
     window.addEventListener("scroll", handleScroll)
     window.addEventListener("mousemove", handleMouseMove)
     window.addEventListener("wheel", handleWheel, { passive: false })
     window.addEventListener("touchstart", handleTouchStart, { passive: false })
+    window.addEventListener("touchend", handleTouchEnd, { passive: false })
 
     return () => {
       window.removeEventListener("scroll", handleScroll)
       window.removeEventListener("mousemove", handleMouseMove)
       window.removeEventListener("wheel", handleWheel)
       window.removeEventListener("touchstart", handleTouchStart)
+      window.removeEventListener("touchend", handleTouchEnd)
       if (scrollTimeout) clearTimeout(scrollTimeout)
     }
   }, [currentSection])
@@ -289,9 +294,9 @@ export default function HomePage() {
              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4 sm:mb-6 text-black" style={{ fontFamily: 'var(--font-montserrat)' }}>
                Portfolio
              </h2>
-             <p className="text-base sm:text-lg md:text-xl text-gray-700 max-w-2xl sm:max-w-3xl mx-auto px-4" style={{ fontFamily: 'var(--font-source-sans)' }}>
-               Zobacz nasze najnowsze prace i inspiruj się luksusowymi stylizacjami
-             </p>
+               <p className="text-sm sm:text-base md:text-lg text-gray-600 max-w-2xl mx-auto px-4" style={{ fontFamily: 'var(--font-source-sans)' }}>
+                 Najnowsze prace i luksusowe stylizacje
+               </p>
            </div>
 
            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 max-h-[60vh] sm:max-h-[70vh] md:max-h-[80vh] overflow-y-auto scrollbar-hide px-2 sm:px-0">
@@ -379,9 +384,8 @@ export default function HomePage() {
                    <Crown className="w-4 h-4 sm:w-5 sm:h-5 md:w-8 md:h-8 text-yellow-500 animate-pulse" />
                  </div>
                </div>
-               <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-700 max-w-3xl sm:max-w-4xl mx-auto text-pretty font-light leading-relaxed px-4" style={{ fontFamily: 'var(--font-source-sans)' }}>
-                 Od klasycznych strzyżeń po awangardowe koloryzacje<br/>
-                 <span className="text-sm sm:text-base md:text-lg text-gray-600 italic">tworzymy luksusowy look idealny dla Ciebie</span>
+               <p className="text-sm sm:text-base md:text-lg text-gray-600 max-w-2xl mx-auto text-pretty font-light leading-relaxed px-4" style={{ fontFamily: 'var(--font-source-sans)' }}>
+                 Od klasycznych strzyżeń po awangardowe koloryzacje
                </p>
              </div>
 
@@ -390,22 +394,22 @@ export default function HomePage() {
                 {
                   num: "01.",
                   title: "Strzyżenie",
-                  desc: "Precyzyjne strzyżenie dopasowane do kształtu Twojej twarzy i stylu życia. Od klasyki po nowoczesne trendy.",
+                  desc: "Precyzyjne strzyżenie dopasowane do Twojej twarzy i stylu życia.",
                 },
                 {
                   num: "02.",
                   title: "Koloryzacja",
-                  desc: "Profesjonalna koloryzacja z użyciem najlepszych produktów. Balayage, ombre, klasyczne kolory i odważne zmiany.",
+                  desc: "Profesjonalna koloryzacja z najlepszymi produktami.",
                 },
                 {
                   num: "03.",
                   title: "Stylizacja",
-                  desc: "Eleganckie upięcia na specjalne okazje, codzienne stylizacje i profesjonalne porady dotyczące pielęgnacji.",
+                  desc: "Eleganckie upięcia na specjalne okazje i codzienne stylizacje.",
                 },
                 {
                   num: "04.",
                   title: "Pielęgnacja",
-                  desc: "Regenerujące zabiegi, masaże głowy i profesjonalne kuracje przywracające włosom zdrowie i blask.",
+                  desc: "Regenerujące zabiegi i profesjonalne kuracje.",
                 },
               ].map((service) => (
                  <div
@@ -440,8 +444,8 @@ export default function HomePage() {
                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4 sm:mb-6 text-balance text-black" style={{ fontFamily: 'var(--font-montserrat)' }}>
                  Opinie Klientek
                </h2>
-               <p className="text-base sm:text-lg md:text-xl text-gray-700 max-w-2xl sm:max-w-3xl mx-auto text-pretty px-4" style={{ fontFamily: 'var(--font-source-sans)' }}>
-                 Poznaj historie zadowolonych klientek, które zaufały naszemu doświadczeniu.
+               <p className="text-sm sm:text-base md:text-lg text-gray-600 max-w-2xl mx-auto text-pretty px-4" style={{ fontFamily: 'var(--font-source-sans)' }}>
+                 Opinie naszych zadowolonych klientek.
                </p>
              </div>
 
@@ -451,19 +455,19 @@ export default function HomePage() {
                   name: "Anna K.",
                   role: "Stała klientka",
                   image: "/woman-portrait.png",
-                  text: "Niesamowita transformacja! Stylista idealnie zrozumiał moje oczekiwania. Czuję się jak nowa osoba!",
+                  text: "Niesamowita transformacja! Stylista idealnie zrozumiał moje oczekiwania.",
                 },
                 {
                   name: "Marta S.",
                   role: "Nowa klientka",
                   image: "/blonde-woman-portrait.png",
-                  text: "Profesjonalizm na najwyższym poziomie. Atmosfera salonu jest wyjątkowa, a efekty przeszły moje oczekiwania.",
+                  text: "Profesjonalizm na najwyższym poziomie. Atmosfera salonu jest wyjątkowa.",
                 },
                 {
                   name: "Karolina M.",
                   role: "Stała klientka",
                   image: "/brunette-woman-portrait.png",
-                  text: "Wreszcie znalazłam salon, gdzie czuję się komfortowo. Indywidualne podejście i perfekcyjne wykonanie!",
+                  text: "Indywidualne podejście i perfekcyjne wykonanie!",
                 },
               ].map((review) => (
                  <div
@@ -503,9 +507,8 @@ export default function HomePage() {
                  <h2 className="text-5xl md:text-6xl font-bold tracking-tight mb-6 text-balance text-black" style={{ fontFamily: 'var(--font-montserrat)' }}>
                    Często Zadawane Pytania
                  </h2>
-                <p className="text-xl text-gray-700 leading-relaxed text-pretty" style={{ fontFamily: 'var(--font-source-sans)' }}>
-                  Znajdź odpowiedzi na najczęściej zadawane pytania dotyczące naszych usług, terminów i sposobów
-                  rezerwacji.
+                <p className="text-base sm:text-lg text-gray-600 leading-relaxed text-pretty" style={{ fontFamily: 'var(--font-source-sans)' }}>
+                  Najczęściej zadawane pytania o nasze usługi i rezerwacje.
                 </p>
               </div>
 
@@ -546,7 +549,7 @@ export default function HomePage() {
                <h2 className="text-5xl md:text-6xl font-bold tracking-tight mb-6 text-balance text-black" style={{ fontFamily: 'var(--font-montserrat)' }}>
                  Umów Wizytę
                </h2>
-              <p className="text-xl text-gray-700 max-w-3xl mx-auto text-pretty" style={{ fontFamily: 'var(--font-source-sans)' }}>
+              <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto text-pretty" style={{ fontFamily: 'var(--font-source-sans)' }}>
                 Wybierz dogodny termin i pozwól nam zadbać o Twoje włosy.
               </p>
             </div>
@@ -657,9 +660,8 @@ export default function HomePage() {
 
               <div className="space-y-8">
                 <div>
-                  <p className="text-xl text-gray-700 leading-relaxed text-pretty">
-                    Możesz również umówić wizytę telefonicznie lub odwiedzić nas osobiście. Jesteśmy otwarci od
-                    poniedziałku do soboty.
+                  <p className="text-base sm:text-lg text-gray-600 leading-relaxed text-pretty">
+                    Możesz również umówić wizytę telefonicznie lub odwiedzić nas osobiście.
                   </p>
                 </div>
 
